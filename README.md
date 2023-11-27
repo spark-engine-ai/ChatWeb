@@ -1,4 +1,4 @@
-# Communicative Agents for Software Development
+# Communicative Agents for Web App Development
 
 <p align="center">
   <img src='./misc/logo1.png' width=550>
