@@ -1,6 +1,3 @@
-'''
-This file contains the main component of the chatbot UI. It renders the ChatMessages and ChatInput components.
-'''
 import React from 'react';
 import ChatInput from './ChatInput';
 import ChatMessages from './ChatMessages';
