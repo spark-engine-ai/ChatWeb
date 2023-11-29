@@ -90,6 +90,8 @@ Follow these steps to set up and run ChatWeb:
   - Ability to navigate and create subfolders.
   - API building support.
   - Detect and iterate on project frameworks of existing projects.
+  - SVG and PNG library plugins via Pexels and other royalty free image APIs
+  - DALLE 3 image creation
 
 ## 📬 Contact
 
