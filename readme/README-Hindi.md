@@ -29,12 +29,12 @@
   <img src='../misc/github.png' width=600>
   </p>
 * 20 सितंबर, 2023: **ह्यूमन-एजेंट-इंटरैक्शन** मोड अब उपलब्ध है! आप समीक्षक की भूमिका निभाकर ChatDev टीम से जुड़ सकते हैं <img src='../online_log/static/figures/reviewer.png' height=20> और प्रोग्रामर को सुझाव देना <img src='../online_log/static/figures/programmer.png' height=20>;
-  कोशिश ``python3 run.py --task [आपके_विचार_का_वर्णन] --config "Human"``. देखना [मार्गदर्शक](../wiki.md#human-agent-interaction) and [उदाहरण](../WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+  कोशिश ``python3 run.py --task [आपके_विचार_का_वर्णन] --config "Human"``. देखना [मार्गदर्शक](../wiki.md#human-agent-interaction) and [उदाहरण](../ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
 * 1 सितंबर, 2023: **कला** मोड अब उपलब्ध है! आप डिज़ाइनर एजेंट को सक्रिय कर सकते हैं <img src='../online_log/static/figures/designer.png' height=20> सॉफ़्टवेयर में प्रयुक्त छवियाँ उत्पन्न करने के लिए;
-  कोशिश ``python3 run.py --task [आपके_विचार_का_वर्णन] --config "Art"``. देखना [मार्गदर्शक](../wiki.md#art) and [उदाहरण](../WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+  कोशिश ``python3 run.py --task [आपके_विचार_का_वर्णन] --config "Art"``. देखना [मार्गदर्शक](../wiki.md#art) and [उदाहरण](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 * 28 अगस्त, 2023: सिस्टम सार्वजनिक रूप से उपलब्ध है।
 * 17 अगस्त, 2023: v1.0.0 संस्करण रिलीज़ के लिए तैयार था।
 * 30 जुलाई, 2023: उपयोगकर्ता चैटचेन, चरण और भूमिका सेटिंग्स को अनुकूलित कर सकते हैं। इसके अतिरिक्त, ऑनलाइन लॉग मोड और रीप्ले दोनों
@@ -95,12 +95,12 @@ https://github.com/OpenBMB/ChatDev/assets/11889052/80d01d2f-677b-4399-ad8b-f7af9
     उस निर्देशिका के भीतर:
     यूनिक्स/लिनक्स पर:
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
    ```
    विंडोज़ पर:
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
    ```
 
@@ -133,7 +133,7 @@ https://github.com/OpenBMB/ChatDev/assets/11889052/80d01d2f-677b-4399-ad8b-f7af9
 **सॉफ़्टवेयर**: जब भी आप चैटडेव का उपयोग करके सॉफ़्टवेयर विकसित करते हैं, तो एक संबंधित फ़ोल्डर उत्पन्न होता है जिसमें सभी शामिल होते हैं
 आवश्यक जानकारी। अपना काम हमारे साथ साझा करना पुल अनुरोध करने जितना ही सरल है। यहाँ एक उदाहरण है: निष्पादित करें
 कमांड ``python3 run.py --task "डिज़ाइन ए 2048 गेम" --नाम "2048" --org "THUNLP" --config "डिफ़ॉल्ट"``। यह करेगा
-एक सॉफ़्टवेयर पैकेज बनाएं और ``/WareHouse/2048_THUNLP_timestamp`` नाम का एक फ़ोल्डर बनाएं। अंदर, आप पाएंगे:
+एक सॉफ़्टवेयर पैकेज बनाएं और ``/ProjectOutput/2048_THUNLP_timestamp`` नाम का एक फ़ोल्डर बनाएं। अंदर, आप पाएंगे:
 
 - 2048 गेम सॉफ़्टवेयर से संबंधित सभी फ़ाइलें और दस्तावेज़
 - इस सॉफ़्टवेयर के लिए ज़िम्मेदार कंपनी की कॉन्फ़िगरेशन फ़ाइलें, जिनमें तीन JSON कॉन्फ़िगरेशन फ़ाइलें शामिल हैं

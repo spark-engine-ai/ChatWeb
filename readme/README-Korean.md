@@ -16,7 +16,7 @@
 
 ## 📰 뉴스
 
-* **2023년 9월 1일: Art 모드가 출시되었습니다! ``python3 run.py --config "Art"``로 소프트웨어에서 사용되는 이미지를 생성해보세요.** [예제](../WareHouse/gomokugameArtExample_THUNLP_20230831122822)를 참조하세요.
+* **2023년 9월 1일: Art 모드가 출시되었습니다! ``python3 run.py --config "Art"``로 소프트웨어에서 사용되는 이미지를 생성해보세요.** [예제](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822)를 참조하세요.
 * 2023년 8월 28일: 시스템이 공개되었습니다.
 * 2023년 8월 17일: V1.0.0 버전 출시 준비가 완료되었습니다.
 * 2023년 7월 30일: 사용자가 ChatChain, Phase 및 Role을 설정할 수 있습니다. 또한, Online Log 모드와 Replay 모드가 지원됩니다.
@@ -65,15 +65,15 @@ https://github.com/OpenBMB/ChatDev/assets/11889052/80d01d2f-677b-4399-ad8b-f7af9
    ```
    python run.py --task "[description_of_your_idea]" --name "[project_name]"
    ```
-6. **소프트웨어 실행하기:** `project_name_DefaultOrganization_timestamp`와 같은 특정 프로젝트 폴더 아래의 `WareHouse` 디렉토리에서 생성된 소프트웨어를 찾을 수 있습니다. 해당 디렉토리 내에서 다음과 같이 소프트웨어를 실행하세요:
+6. **소프트웨어 실행하기:** `project_name_DefaultOrganization_timestamp`와 같은 특정 프로젝트 폴더 아래의 `ProjectOutput` 디렉토리에서 생성된 소프트웨어를 찾을 수 있습니다. 해당 디렉토리 내에서 다음과 같이 소프트웨어를 실행하세요:
    유닉스/리눅스의 경우:
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
    ```
    Windows의 경우:
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
    ```
    
@@ -96,7 +96,7 @@ https://github.com/OpenBMB/ChatDev/assets/11889052/80d01d2f-677b-4399-ad8b-f7af9
 
 **회사**: 당신만의 맞춤형 "ChatDev 회사"를 쉽게 만들 수 있습니다. 이 맞춤형 설정에는 세 가지 간단한 구성 JSON 파일이 포함됩니다. ``CompanyConfig/Default`` 디렉토리에 제공된 예제를 확인하세요. 맞춤화에 대한 자세한 지침은 [위키](../wiki.md)를 참조하세요.
 
-**소프트웨어**: ChatDev를 사용하여 소프트웨어를 개발할 때마다 모든 필수 정보가 포함된 해당 폴더가 생성됩니다. PR을 작성하는 것만큼이나 간단하게 작업을 공유할 수 있습니다. 예를 들어, ``python3 run.py --task "design a 2048 game" --name "2048" --org "THUNLP" --config "Default"``라는 명령을 실행합니다. 이렇게 하면 소프트웨어 패키지가 생성되고 ``/WareHouse/2048_THUNLP_timestamp``라는 폴더가 생성됩니다. 그 안에는 다음과 같은 파일들이 있습니다:
+**소프트웨어**: ChatDev를 사용하여 소프트웨어를 개발할 때마다 모든 필수 정보가 포함된 해당 폴더가 생성됩니다. PR을 작성하는 것만큼이나 간단하게 작업을 공유할 수 있습니다. 예를 들어, ``python3 run.py --task "design a 2048 game" --name "2048" --org "THUNLP" --config "Default"``라는 명령을 실행합니다. 이렇게 하면 소프트웨어 패키지가 생성되고 ``/ProjectOutput/2048_THUNLP_timestamp``라는 폴더가 생성됩니다. 그 안에는 다음과 같은 파일들이 있습니다:
 
 - 2048 게임 소프트웨어와 관련된 모든 파일 및 문서
 - ``CompanyConfig/Default``에서 가져온 3개의 JSON을 포함한, 소프트웨어를 담당하는 이 회사의 구성 파일들

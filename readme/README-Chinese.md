@@ -18,7 +18,7 @@
 ## 📰 新闻
 
 - **2023年9月1日：Art模式现已可用！您可以使用智能体生成软件中使用的图像，尝试 `python3 run.py --config "Art"`。**
-  请参见此处的[示例](../WareHouse/gomokugameArtExample_THUNLP_20230831122822)。
+  请参见此处的[示例](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822)。
 - 2023年8月28日：系统已公开提供使用。
 - 2023年8月17日：V1.0.0版本已准备好发布。
 - 2023年7月30日：用户可以自定义ChatChain、Phase和Role设置。此外，现在支持在线Log模式和重放模式。
@@ -83,19 +83,19 @@ https://github.com/OpenBMB/ChatDev/assets/11889052/80d01d2f-677b-4399-ad8b-f7af9
    ```
    python run.py --task "[description_of_your_idea]" --name "[project_name]"
    ```
-6. **运行您的软件：** 生成后，您可以在`WareHouse`
+6. **运行您的软件：** 生成后，您可以在`ProjectOutput`
    目录下的特定项目文件夹中找到您的软件，例如`project_name_DefaultOrganization_timestamp`。在该目录中运行以下命令来运行您的软件：
    在Unix/Linux系统上：
 
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
    ```
 
    在Windows系统上：
 
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
    ```
 
@@ -122,7 +122,7 @@ request！您的贡献非常宝贵。如果您需要帮助，请联系我们！
 
 **软件：** 每当您使用ChatDev开发软件时，都会生成一个包含所有必要信息的相应文件夹。与我们分享您的工作就像创建一个pull
 request一样简单。这是一个示例：执行命令`python3 run.py --task "design a 2048 game" --name "2048" --org "THUNLP" --config "Default"`
-。这将创建一个软件包并生成一个名为`/WareHouse/2048_THUNLP_timestamp`的文件夹。其中包括：
+。这将创建一个软件包并生成一个名为`/ProjectOutput/2048_THUNLP_timestamp`的文件夹。其中包括：
 
 - 所有与2048游戏软件相关的文件和文档
 - 负责此软件的公司的配置文件，包括`CompanyConfig/Default`中的三个JSON配置文件

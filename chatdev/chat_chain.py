@@ -35,8 +35,8 @@ class ChatChain:
             config_path: path to the ChatChainConfig.json
             config_phase_path: path to the PhaseConfig.json
             config_role_path: path to the RoleConfig.json
-            task_prompt: the user input prompt for software
-            project_name: the user input name for software
+            task_prompt: the user input prompt for webapplication
+            project_name: the user input name for webapplication
             org_name: the organization name of the human user
         """
 
@@ -164,9 +164,9 @@ class ChatChain:
 
     def get_logfilepath(self):
         """
-        get the log path (under the software path)
+        get the log path (under the webapplication path)
         Returns:
-            start_time: time for starting making the software
+            start_time: time for starting making the webapplication
             log_filepath: path to the log
 
         """
@@ -174,8 +174,8 @@ class ChatChain:
         filepath = os.path.dirname(__file__)
         # root = "/".join(filepath.split("/")[:-1])
         root = os.path.dirname(filepath)
-        # directory = root + "/WareHouse/"
-        directory = os.path.join(root, "WareHouse")
+        # directory = root + "/ProjectOutput/"
+        directory = os.path.join(root, "ProjectOutput")
         log_filepath = os.path.join(directory,
                                     "{}.log".format("_".join([self.project_name, self.org_name, start_time])))
         return start_time, log_filepath
@@ -189,36 +189,66 @@ class ChatChain:
         if self.chat_env.config.clear_structure:
             filepath = os.path.dirname(__file__)
             root = os.path.dirname(filepath)
-            directory = os.path.join(root, "WareHouse")
+            directory = os.path.join(root, "ProjectOutput")
             for filename in os.listdir(directory):
                 file_path = os.path.join(directory, filename)
-                # logs with error trials are left in WareHouse/
-                if os.path.isfile(file_path) and not filename.endswith(".py") and not filename.endswith(".log"):
+                # logs with error trials are left in ProjectOutput/
+                if os.path.isfile(file_path) and not filename.endswith(".js") and not filename.endswith(".log"):
                     os.remove(file_path)
                     print("{} Removed.".format(file_path))
 
-        software_path = os.path.join(directory, "_".join([self.project_name, self.org_name, self.start_time]))
-        self.chat_env.set_directory(software_path)
+        webapplication_path = os.path.join(directory, "_".join([self.project_name, self.org_name, self.start_time]))
+        self.chat_env.set_directory(webapplication_path)
 
-        # copy config files to software path
-        shutil.copy(self.config_path, software_path)
-        shutil.copy(self.config_phase_path, software_path)
-        shutil.copy(self.config_role_path, software_path)
+        # Create specific subdirectories for Next.js TypeScript project
+        subdirectories = ["components", "public", "pages", "context", "types", "styles"]
+        for subdirectory in subdirectories:
+            path = os.path.join(webapplication_path, subdirectory)
+            os.makedirs(path, exist_ok=True)
+            print(f"Subdirectory '{subdirectory}' created at {path}")
 
-        # copy code files to software path in incremental_develop mode
+        nextjs_typescript_tailwind_config = {
+            "next.config.js": "module.exports = {\n  reactStrictMode: true,\n};\n",
+            "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"es5\",\n    \"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": false,\n    \"forceConsistentCasingInFileNames\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"node\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"preserve\"\n  },\n  \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\"],\n  \"exclude\": [\"node_modules\"]\n}",
+            "package.json": "{\n  \"name\": \"" + self.project_name + "\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Website landing page built with React and Tailwind\",\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\"\n  },\n  \"dependencies\": {\n    \"autoprefixer\": \"^10.4.16\",\n    \"next\": \"^13.2.4\",\n    \"postcss\": \"^8.4.31\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\"\n  },\n  \"devDependencies\":      {\n    \"@types/react\": \"^18.0.28\",\n    \"react-scripts\": \"^5.0.1\",\n    \"tailwindcss\": \"^3.3.5\",\n    \"typescript\": \"^4.9.5\"\n  },\n  \"browserslist\": {\n    \"production\": [\n      \">0.2%\",\n      \"not dead\",\n      \"not op_mini all\"\n    ],\n    \"development\": [\n      \"last 1 chrome version\",\n      \"last 1 firefox version\",\n      \"last 1 safari version\"\n    ]\n  }\n}",
+            "tailwind.config.js": "module.exports = {\n  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],\n  darkMode: false, // or 'media' or 'class'\n  theme: {\n    extend: {},\n  },\n  variants: {\n    extend: {},\n  },\n  plugins: [],\n};\n",
+            ".env": "# Environment variables\n# e.g., API_KEY=yourapikey\n",
+            ".gitignore": "node_modules/\n.next/\nout/\n*.log\n.env.local\n.env.development.local\n.env.test.local\n.env.production.local\n",
+            "postcss.config.js": "module.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n",
+            "next-env.d.ts": "// <reference types=\"next\" />\n// <reference types=\"next/types/global\" />\n",
+            "README.md": f"# {self.project_name}\n\nThis is a [Next.js](https://nextjs.org/) project bootstrapped with TypeScript and Tailwind CSS.\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\n...",
+            os.path.join("pages", "_app.tsx"): "import '../styles/globals.css'\n\nfunction MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />\n}\n\nexport default MyApp\n",
+            os.path.join("pages", "_document.tsx"): "import Document, { Html, Head, Main, NextScript } from 'next/document'\n\nclass MyDocument extends Document {\n  render() {\n    return (\n      <Html>\n        <Head />\n        <body>\n          <Main />\n          <NextScript />\n        </body>\n      </Html>\n    )\n  }\n}\n\nexport default MyDocument\n",
+            os.path.join("pages", "index.tsx"): "import MainComponent from '../components/main'\n\nexport default function Home() {\n  return <MainComponent />\n}\n",
+            os.path.join("pages", "404.tsx"): "export default function Custom404() {\n  return <h1>404 - Page Not Found</h1>\n}\n",
+            os.path.join("styles", "globals.css"): "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n"
+        }
+
+        for file_name, content in nextjs_typescript_tailwind_config.items():
+            file_path = os.path.join(webapplication_path, file_name)
+            with open(file_path, "w") as file:
+                file.write(content)
+                print(f"{file_name} created with starter content at {file_path}")
+
+        # copy config files to webapplication path
+        shutil.copy(self.config_path, webapplication_path)
+        shutil.copy(self.config_phase_path, webapplication_path)
+        shutil.copy(self.config_role_path, webapplication_path)
+
+        # copy code files to webapplication path in incremental_develop mode
         if check_bool(self.config["incremental_develop"]):
             for root, dirs, files in os.walk(self.code_path):
                 relative_path = os.path.relpath(root, self.code_path)
-                target_dir = os.path.join(software_path, 'base', relative_path)
+                target_dir = os.path.join(webapplication_path, 'base', relative_path)
                 os.makedirs(target_dir, exist_ok=True)
                 for file in files:
                     source_file = os.path.join(root, file)
                     target_file = os.path.join(target_dir, file)
                     shutil.copy2(source_file, target_file)
-            self.chat_env._load_from_hardware(os.path.join(software_path, 'base'))
+            self.chat_env._load_from_hardware(os.path.join(webapplication_path, 'base'))
 
-        # write task prompt to software
-        with open(os.path.join(software_path, self.project_name + ".prompt"), "w") as f:
+        # write task prompt to webapplication
+        with open(os.path.join(webapplication_path, self.project_name + ".prompt"), "w") as f:
             f.write(self.task_prompt_raw)
 
         preprocess_msg = "**[Preprocessing]**\n\n"
@@ -244,7 +274,7 @@ class ChatChain:
 
     def post_processing(self):
         """
-        summarize the production and move log files to the software directory
+        summarize the production and move log files to the webapplication directory
         Returns: None
 
         """
@@ -306,7 +336,7 @@ class ChatChain:
         time.sleep(1)
 
         shutil.move(self.log_filepath,
-                    os.path.join(root + "/WareHouse", "_".join([self.project_name, self.org_name, self.start_time]),
+                    os.path.join(root + "/ProjectOutput", "_".join([self.project_name, self.org_name, self.start_time]), "/components",
                                  os.path.basename(self.log_filepath)))
 
     # @staticmethod
@@ -320,18 +350,18 @@ class ChatChain:
             revised_task_prompt: revised prompt from the prompt engineer agent
 
         """
-        self_task_improve_prompt = """I will give you a short description of a software design requirement, 
-please rewrite it into a detailed prompt that can make large language model know how to make this software better based this prompt,
-the prompt should ensure LLMs build a software that can be run correctly, which is the most import part you need to consider.
-remember that the revised prompt should not contain more than 200 words, 
-here is the short description:\"{}\". 
-If the revised prompt is revised_version_of_the_description, 
+        self_task_improve_prompt = """I will give you a short description of a web application design requirement,
+please rewrite it into a detailed prompt that can make large language model know how to make this web application better based this prompt,
+the prompt should ensure LLMs build a webapplication that can be run correctly, which is the most import part you need to consider.
+remember that the revised prompt should not contain more than 200 words,
+here is the short description:\"{}\".
+If the revised prompt is revised_version_of_the_description,
 then you should return a message in a format like \"<INFO> revised_version_of_the_description\", do not return messages in other formats.""".format(
             task_prompt)
         role_play_session = RolePlaying(
             assistant_role_name="Prompt Engineer",
             assistant_role_prompt="You are an professional prompt engineer that can improve user input prompt to make LLM better understand these prompts.",
-            user_role_prompt="You are an user that want to use LLM to build software.",
+            user_role_prompt="You are an user that want to use LLM to build webapplication.",
             user_role_name="User",
             task_type=TaskType.CHATDEV,
             task_prompt="Do prompt engineering on user query",

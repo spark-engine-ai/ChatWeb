@@ -5,7 +5,7 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
+# Unless required by applicable law or agreed to in writing, webapplication
 # distributed under the License is distributed on an “AS IS” BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
@@ -61,15 +61,15 @@ parser = argparse.ArgumentParser(description='argparse')
 parser.add_argument('--config', type=str, default="Default",
                     help="Name of config, which is used to load configuration under CompanyConfig/")
 parser.add_argument('--org', type=str, default="DefaultOrganization",
-                    help="Name of organization, your software will be generated in WareHouse/name_org_timestamp")
+                    help="Name of organization, your webapplication will be generated in ProjectOutput/name_org_timestamp")
 parser.add_argument('--task', type=str, default="Develop a basic Gomoku game.",
-                    help="Prompt of software")
+                    help="Prompt of webapplication")
 parser.add_argument('--name', type=str, default="Gomoku",
-                    help="Name of software, your software will be generated in WareHouse/name_org_timestamp")
+                    help="Name of webapplication, your webapplication will be generated in ProjectOutput/name_org_timestamp")
 parser.add_argument('--model', type=str, default="GPT_3_5_TURBO",
                     help="GPT Model, choose from {'GPT_3_5_TURBO','GPT_4','GPT_4_32K'}")
 parser.add_argument('--path', type=str, default="",
-                    help="Your file directory, ChatDev will build upon your software in the Incremental mode")
+                    help="Your file directory, ChatDev will build upon your webapplication in the Incremental mode")
 args = parser.parse_args()
 
 # Start ChatDev

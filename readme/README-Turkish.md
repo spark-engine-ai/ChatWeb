@@ -29,11 +29,11 @@
   <p align="center">
   <img src='../misc/github.png' width=600>
   </p>
-- 20 Eylül 2023: **İnsan-Ajan-İletişimi** modu artık kullanılabilir! ChatDev ekibine katılarak inceleyici <img src='../online_log/static/figures/reviewer.png' height=20> rolünü üstlenebilir ve programcıya <img src='../online_log/static/figures/programmer.png' height=20> önerilerde bulunabilirsiniz; ``python3 run.py --task [fikrinizin açıklaması] --config "İnsan"`` komutunu deneyin. [Kılavuza](wiki.md#human-agent-interaction) ve [örneğe](WareHouse/Gomoku_HumanAgentInteraction_20230920135038) bakınız.
+- 20 Eylül 2023: **İnsan-Ajan-İletişimi** modu artık kullanılabilir! ChatDev ekibine katılarak inceleyici <img src='../online_log/static/figures/reviewer.png' height=20> rolünü üstlenebilir ve programcıya <img src='../online_log/static/figures/programmer.png' height=20> önerilerde bulunabilirsiniz; ``python3 run.py --task [fikrinizin açıklaması] --config "İnsan"`` komutunu deneyin. [Kılavuza](wiki.md#human-agent-interaction) ve [örneğe](ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038) bakınız.
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
-- 1 Eylül 2023: **Sanat** modu şimdi kullanılabilir! Yazılımda kullanılan görselleri oluşturmak için tasarımcı ajanını <img src='../online_log/static/figures/designer.png' height=20> etkinleştirebilirsiniz; ``python3 run.py --task [fikrinizin açıklaması] --config "Sanat"`` komutunu deneyin. [Kılavuza](wiki.md#art) ve [örneğe](WareHouse/gomokugameArtExample_THUNLP_20230831122822) bakınız.
+- 1 Eylül 2023: **Sanat** modu şimdi kullanılabilir! Yazılımda kullanılan görselleri oluşturmak için tasarımcı ajanını <img src='../online_log/static/figures/designer.png' height=20> etkinleştirebilirsiniz; ``python3 run.py --task [fikrinizin açıklaması] --config "Sanat"`` komutunu deneyin. [Kılavuza](wiki.md#art) ve [örneğe](ProjectOutput/gomokugameArtExample_THUNLP_20230831122822) bakınız.
 - 28 Ağustos 2023: Sistem halka açık durumda.
 - 17 Ağustos 2023: v1.0.0 sürümü hazırlandı.
 - 30 Temmuz 2023: Kullanıcılar ChatChain, Aşama ve Rol ayarlarını özelleştirebilirler. Ayrıca, hem çevrimiçi Log modu hem de yeniden oynatma mod
@@ -120,7 +120,7 @@ Başlamak için şu adımları izleyin:
 
    ```
 
-   cd WareHouse/proje_adı_VarsayılanOrganizasyon_zamanDamgası
+   cd ProjectOutput/proje_adı_VarsayılanOrganizasyon_zamanDamgası
    python3 main.py
 
    ```
@@ -129,7 +129,7 @@ Başlamak için şu adımları izleyin:
 
    ```
 
-   cd WareHouse/proje_adı_VarsayılanOrganizasyon_zamanDamgası
+   cd ProjectOutput/proje_adı_VarsayılanOrganizasyon_zamanDamgası
    python main.py
 
    ```
@@ -157,7 +157,7 @@ Daha ayrıntılı bilgi için [Wiki](wiki.md)'mize başvurabilirsiniz, burada ş
 
 **Şirket**: Kendi özelleştirilmiş "ChatDev Şirketi"ni oluşturmak çok kolaydır. Bu kişiselleştirilmiş kurulum, üç basit yapılandırma JSON dosyasını içerir. ``CompanyConfig/Default`` dizininde verilen örneğe bakın. Özelleştirme hakkında detaylı talimatlar için [Wiki](wiki.md) sayfamıza göz atın.
 
-**Yazılım**: ChatDev kullanarak yazılım geliştirdiğinizde, ilgili bilgileri içeren bir klasör oluşturulur. Çalışmanızı bizimle paylaşmak, bir çekme isteği oluşturmak kadar basittir. İşte bir örnek: ``python3 run.py --task "2048 oyunu tasarla" --name "2048" --org "THUNLP" --config "Default"`` komutunu çalıştırın. Bu, bir yazılım paketi oluşturur ve ``/WareHouse/2048_THUNLP_timestamp`` adında bir klasör oluşturur. İçinde şunları bulacaksınız:
+**Yazılım**: ChatDev kullanarak yazılım geliştirdiğinizde, ilgili bilgileri içeren bir klasör oluşturulur. Çalışmanızı bizimle paylaşmak, bir çekme isteği oluşturmak kadar basittir. İşte bir örnek: ``python3 run.py --task "2048 oyunu tasarla" --name "2048" --org "THUNLP" --config "Default"`` komutunu çalıştırın. Bu, bir yazılım paketi oluşturur ve ``/ProjectOutput/2048_THUNLP_timestamp`` adında bir klasör oluşturur. İçinde şunları bulacaksınız:
 
 - 2048 oyun yazılımıyla ilgili tüm dosyalar ve belgeler
 - Bu yazılımdan sorumlu şirketin yapılandırma dosyaları, içerisinde üç JSON yapılandırma dosyası bulunan ``CompanyConfig/Default``

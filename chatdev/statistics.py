@@ -52,7 +52,7 @@ def get_info(dir, log_filepath):
         filenames = os.listdir(dir)
         # print(filenames)
 
-        num_code_files = len([filename for filename in filenames if filename.endswith(".py")])
+        num_code_files = len([filename for filename in filenames if filename.endswith(".js")])
         # print("num_code_files:", num_code_files)
 
         num_png_files = len([filename for filename in filenames if filename.endswith(".png")])
@@ -60,7 +60,7 @@ def get_info(dir, log_filepath):
 
         num_doc_files = 0
         for filename in filenames:
-            if filename.endswith(".py") or filename.endswith(".png"):
+            if filename.endswith(".js") or filename.endswith(".png"):
                 continue
             if os.path.isfile(os.path.join(dir, filename)):
                 # print(filename)
@@ -74,8 +74,8 @@ def get_info(dir, log_filepath):
             version_updates = -1
         # print("version_updates: ", version_updates)
 
-        if "requirements.txt" in filenames:
-            lines = open(os.path.join(dir, "requirements.txt"), "r", encoding="utf8").read().split("\n")
+        if "package.json" in filenames:
+            lines = open(os.path.join(dir, "package.json"), "r", encoding="utf8").read().split("\n")
             env_lines = len([line for line in lines if len(line.strip()) > 0])
         else:
             env_lines = -1
@@ -90,7 +90,7 @@ def get_info(dir, log_filepath):
 
         code_lines = 0
         for filename in filenames:
-            if filename.endswith(".py"):
+            if filename.endswith(".js"):
                 # print("......filename:", filename)
                 lines = open(os.path.join(dir, filename), "r", encoding="utf8").read().split("\n")
                 code_lines += len([line for line in lines if len(line.strip()) > 0])
@@ -108,7 +108,7 @@ def get_info(dir, log_filepath):
             elif model_type == "GPT_4_32k":
                 model_type = "gpt-4-32k"
             # print("model_type:", model_type)
-        
+
         lines = open(log_filepath, "r", encoding="utf8").read().split("\n")
         start_lines = [line for line in lines if "**[Start Chat]**" in line]
         chat_lines = [line for line in lines if "<->" in line]

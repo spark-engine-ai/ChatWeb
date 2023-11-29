@@ -29,12 +29,12 @@
   <img src='../misc/github.png' width=600>
   </p>
 * september 20. 2023: Režim **Human-Agent-Interaction** je teraz k dispozícii! Môžete sa zapojiť do tímu ChatDev tým, že budete hrať úlohu recenzenta <img src='../online_log/static/figures/reviewer.png' height=20> a predkladať návrhy programátorovi <img src='../online_log/static/figures/programmer.png' height=20>;
-  skúste ``python3 run.py --task [description_of_your_idea] --config "Human"``. Pozri [návod](../wiki.md#human-agent-interaction) a [príklad](../WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+  skúste ``python3 run.py --task [description_of_your_idea] --config "Human"``. Pozri [návod](../wiki.md#human-agent-interaction) a [príklad](../ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
 * september 1. 2023: Režim **Art** je už k dispozícii! Môžete si aktivovať agenta dizajnéra <img src='../online_log/static/figures/designer.png' height=20> na generovanie obrázkov používaných v programe;
-  skúste ``python3 run.py --task [description_of_your_idea] --config "Art"``. Pozri [návod](../wiki.md#art) a [príklad](../WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+  skúste ``python3 run.py --task [description_of_your_idea] --config "Art"``. Pozri [návod](../wiki.md#art) a [príklad](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 * august 28. 2023: Systém je verejne dostupný.
 * august 17. 2023: Verzia v1.0.0 bola pripravená na vydanie.
 * júl 30. 2023: Používatelia si môžu prispôsobiť nastavenia ChatChain, Phase a Role. Okrem toho je k dispozícii režim online záznamu aj replay
@@ -88,17 +88,17 @@ Ak chcete začať, postupujte podľa týchto krokov:
    ```
    python run.py --task "[popis_vášho_nápadu]" --name "[meno_projektu]"
    ```
-6. **Spustenie softvéru:** Po vygenerovaní nájdete svoj softvér v adresári `WareHouse` pod konkrétnym
+6. **Spustenie softvéru:** Po vygenerovaní nájdete svoj softvér v adresári `ProjectOutput` pod konkrétnym
    priečinku projektu, napríklad `moj_projekt_DefaultOrganization_20231010224405`. Spustite svoj softvér pomocou nasledujúceho príkazu
    v tomto adresári:
    V systéme Unix/Linux:
    ```
-   cd WareHouse/moj_projekt_DefaultOrganization_20231010224405
+   cd ProjectOutput/moj_projekt_DefaultOrganization_20231010224405
    python3 main.py
    ```
    Na Windowse
    ```
-   cd WareHouse/moj_projekt_DefaultOrganization_20231010224405
+   cd ProjectOutput/moj_projekt_DefaultOrganization_20231010224405
    python main.py
    ```
 
@@ -130,7 +130,7 @@ návod na prispôsobenie nájdete na našej [Wiki](../wiki.md).
 **Softvér**: Vždy, keď vyvíjate softvér pomocou ChatDev, vytvorí sa príslušný priečinok obsahujúci všetky
 dôležité informácie. Zdieľanie vašej práce s nami je také jednoduché ako pull request. Tu je príklad: vykonajte
 príkaz ``python3 run.py --task "design a 2048 game" --name "2048" --org "THUNLP" --config "Default"``. Tým sa
-vytvorí softvérový balík a vygeneruje priečinok s názvom ``/WareHouse/2048_THUNLP_timestamp``. V ňom nájdete:
+vytvorí softvérový balík a vygeneruje priečinok s názvom ``/ProjectOutput/2048_THUNLP_timestamp``. V ňom nájdete:
 
 - Všetky súbory a dokumenty týkajúce sa softvéru hry 2048
 - Konfiguračné súbory spoločnosti zodpovednej za tento softvér vrátane troch konfiguračných súborov JSON

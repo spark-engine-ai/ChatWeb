@@ -66,7 +66,7 @@ class Phase(ABC):
 
         Args:
             chat_env: global chatchain environment TODO: only for employee detection, can be deleted
-            task_prompt: user query prompt for building the software
+            task_prompt: user query prompt for building the webapplication
             assistant_role_name: who receives the chat
             user_role_name: who starts the chat
             phase_prompt: prompt of the phase
@@ -187,7 +187,7 @@ class Phase(ABC):
         """
 
         Args:
-            task_prompt: user query prompt for building the software
+            task_prompt: user query prompt for building the webapplication
             role_play_session: role play session from the chat phase which needs reflection
             phase_name: name of the chat phase which needs reflection
             chat_env: global chatchain environment
@@ -207,9 +207,9 @@ class Phase(ABC):
         elif phase_name == "DemandAnalysis":
             question = """Answer their final product modality in the discussion without any other words, e.g., "PowerPoint" """
         elif phase_name == "LanguageChoose":
-            question = """Conclude the programming language being discussed for software development, in the format: "*" where '*' represents a programming language." """
+            question = """Conclude the programming language being discussed for webapplication development, in the format: "*" where '*' represents a programming language." """
         elif phase_name == "EnvironmentDoc":
-            question = """According to the codes and file format listed above, write a requirements.txt file to specify the dependencies or packages required for the project to run properly." """
+            question = """According to the codes and file format listed above, write a package.json file to specify the dependencies or packages required for the project to run properly." """
         else:
             raise ValueError(f"Reflection of phase {phase_name}: Not Assigned.")
 
@@ -342,7 +342,7 @@ class Coding(Phase):
 
     def update_phase_env(self, chat_env):
         gui = "" if not chat_env.config.gui_design \
-            else "The software should be equipped with graphical user interface (GUI) so that user can visually and graphically use it; so you must choose a GUI framework (e.g., in Python, you can implement GUI via tkinter, Pygame, Flexx, PyGUI, etc,)."
+            else "The webapplication should be equipped with graphical user interface (GUI) so that user can visually and graphically use it; so you must choose a GUI framework (e.g., in Python, you can implement GUI via tkinter, Pygame, Flexx, PyGUI, etc,)."
         self.phase_env.update({"task": chat_env.env_dict['task_prompt'],
                                "modality": chat_env.env_dict['modality'],
                                "ideas": chat_env.env_dict['ideas'],
@@ -490,7 +490,7 @@ class CodeReviewHuman(Phase):
         self.update_phase_env(chat_env)
         log_and_print_online(
             f"**[Human-Agent-Interaction]**\n\n"
-            f"Now you can participate in the development of the software!\n"
+            f"Now you can participate in the development of the webapplication!\n"
             f"The task is:  {chat_env.env_dict['task_prompt']}\n"
             f"Please input your feedback (in multiple lines). It can be bug report or new feature requirement.\n"
             f"You are currently in the #{self.phase_env['cycle_index']} human feedback with a total of {self.phase_env['cycle_num']} feedbacks\n"

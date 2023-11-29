@@ -30,11 +30,11 @@
   <p align="center">
   <img src='../misc/github.png' width=600>
   </p>
-- 20 September 2023: Mode **Interaksi Manusia-Agen** kini tersedia! Anda dapat terlibat dengan tim ChatDev dengan memainkan peran reviewer <img src='../online_log/static/figures/reviewer.png' height=20> dan memberikan saran kepada programmer <img src='../online_log/static/figures/programmer.png' height=20>; coba ``python3 run.py --task [deskripsi_ide_anda] --config "Manusia"``. Lihat [panduan](wiki.md#interaksi-manusia-agen) dan [contoh](WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+- 20 September 2023: Mode **Interaksi Manusia-Agen** kini tersedia! Anda dapat terlibat dengan tim ChatDev dengan memainkan peran reviewer <img src='../online_log/static/figures/reviewer.png' height=20> dan memberikan saran kepada programmer <img src='../online_log/static/figures/programmer.png' height=20>; coba ``python3 run.py --task [deskripsi_ide_anda] --config "Manusia"``. Lihat [panduan](wiki.md#interaksi-manusia-agen) dan [contoh](ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
-- 1 September 2023: Mode **Seni** kini tersedia! Anda dapat mengaktifkan agen desainer <img src='../online_log/static/figures/designer.png' height=20> untuk menghasilkan gambar yang digunakan dalam perangkat lunak; coba ``python3 run.py --task [deskripsi_ide_anda] --config "Seni"``. Lihat [panduan](wiki.md#seni) dan [contoh](WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+- 1 September 2023: Mode **Seni** kini tersedia! Anda dapat mengaktifkan agen desainer <img src='../online_log/static/figures/designer.png' height=20> untuk menghasilkan gambar yang digunakan dalam perangkat lunak; coba ``python3 run.py --task [deskripsi_ide_anda] --config "Seni"``. Lihat [panduan](wiki.md#seni) dan [contoh](ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 - 28 Agustus 2023: Sistem tersedia untuk publik.
 - 17 Agustus 2023: Versi v1.0.0 siap untuk dirilis.
 - 30 Juli 2023: Pengguna dapat menyesuaikan pengaturan ChatChain, Fase, dan Peran. Selain itu, mode Log online dan mode pemutaran kini didukung.
@@ -113,12 +113,12 @@ Untuk memulai, ikuti langkah-langkah berikut:
 
    ```
 
-6. **Menjalankan Perangkat Lunak Anda:** Setelah dibangun, Anda dapat menemukan perangkat lunak Anda di direktori `WareHouse` dalam folder proyek tertentu, seperti `project_name_DefaultOrganization_timestamp`. Jalankan perangkat lunak Anda dengan perintah berikut di dalam direktori tersebut:
+6. **Menjalankan Perangkat Lunak Anda:** Setelah dibangun, Anda dapat menemukan perangkat lunak Anda di direktori `ProjectOutput` dalam folder proyek tertentu, seperti `project_name_DefaultOrganization_timestamp`. Jalankan perangkat lunak Anda dengan perintah berikut di dalam direktori tersebut:
    Pada Unix/Linux:
 
    ```
 
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
 
    ```
@@ -127,7 +127,7 @@ Untuk memulai, ikuti langkah-langkah berikut:
 
    ```
 
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
 
    ```
@@ -155,7 +155,7 @@ Untuk informasi lebih rinci, silakan merujuk ke [Wiki](wiki.md) kami, di mana An
 
 **Perusahaan**: Membuat "Perusahaan ChatDev" khusus Anda sendiri sangat mudah. Penyiapan ini melibatkan tiga file JSON konfigurasi sederhana. Lihat contoh yang disediakan dalam direktori ``CompanyConfig/Default``. Untuk petunjuk lebih rinci tentang penyesuaian, lihat [Wiki](wiki.md) kami.
 
-**Perangkat Lunak**: Setiap kali Anda mengembangkan perangkat lunak menggunakan ChatDev, folder yang sesuai akan dihasilkan yang berisi semua informasi penting. Berbagi pekerjaan Anda dengan kami sama mudahnya seperti membuat permintaan tarik. Berikut contohnya: jalankan perintah ``python3 run.py --task "mendesain game 2048" --name "2048"  --org "THUNLP" --config "Default"``. Ini akan membuat paket perangkat lunak dan menghasilkan folder bernama ``/WareHouse/2048_THUNLP_timestamp``. Di dalamnya, Anda akan menemukan:
+**Perangkat Lunak**: Setiap kali Anda mengembangkan perangkat lunak menggunakan ChatDev, folder yang sesuai akan dihasilkan yang berisi semua informasi penting. Berbagi pekerjaan Anda dengan kami sama mudahnya seperti membuat permintaan tarik. Berikut contohnya: jalankan perintah ``python3 run.py --task "mendesain game 2048" --name "2048"  --org "THUNLP" --config "Default"``. Ini akan membuat paket perangkat lunak dan menghasilkan folder bernama ``/ProjectOutput/2048_THUNLP_timestamp``. Di dalamnya, Anda akan menemukan:
 
 - Semua file dan dokumen terkait perangkat lunak game 2048
 - File konfigurasi perusahaan yang bertanggung jawab atas perangkat lunak ini, termasuk tiga file konfigurasi JSON dari ``CompanyConfig/Default``

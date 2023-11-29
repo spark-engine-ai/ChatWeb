@@ -10,7 +10,7 @@
       "Excel: can present information via .xlsx files.",
       "PDF: can present information via .pdf files.",
       "Website: can present personal resume, tutorial, products, or ideas, via .html files.",
-      "Application: can implement visualized game, software, tool, etc, via python.",
+      "Application: can implement visualized game, webapplication, tool, etc, via python.",
       "Dashboard: can display a panel visualizing real-time information.",
       "Mind Map: can represent ideas, with related concepts arranged around a core concept.",
       "As the {assistant_role}, to satisfy the new user's demand and the product should be realizable, you should keep discussing with me to decide which product modality do we want the product to be?",
@@ -25,8 +25,8 @@
       "Task: \"{task}\".",
       "Modality: \"{modality}\".",
       "Ideas: \"{ideas}\".",
-      "We have decided to complete the task through a executable software implemented via a programming language. ",
-      "As the {assistant_role}, to satisfy the new user's demand and make the software realizable, you should propose a concrete programming language. If python can complete this task via Python, please answer Python; otherwise, answer another programming language (e.g., Java, C++, etc,).",
+      "We have decided to complete the task through a executable webapplication implemented via a programming language. ",
+      "As the {assistant_role}, to satisfy the new user's demand and make the webapplication realizable, you should propose a concrete programming language. If python can complete this task via Python, please answer Python; otherwise, answer another programming language (e.g., Java, C++, etc,).",
       "Note that we must ONLY discuss the target programming language and do not discuss anything else! Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion and conclude the best programming language we have discussed without any other words or reasons, return only one line using the format: \"<INFO> *\" where \"*\" represents a programming language."
     ]
   },
@@ -34,12 +34,12 @@
     "assistant_role_name": "Programmer",
     "user_role_name": "Chief Technology Officer",
     "phase_prompt": [
-      "According to the new user's task and our software designs listed below: ",
+      "According to the new user's task and our webapplication designs listed below: ",
       "Task: \"{task}\".",
       "Modality: \"{modality}\".",
       "Programming Language: \"{language}\"",
       "Ideas:\"{ideas}\"",
-      "We have decided to complete the task through a executable software with multiple files implemented via {language}. As the {assistant_role}, to satisfy the new user's demands, you should write one or multiple files and make sure that every detail of the architecture is, in the end, implemented as code. {gui}",
+      "We have decided to complete the task through a executable webapplication with multiple files implemented via {language}. As the {assistant_role}, to satisfy the new user's demands, you should write one or multiple files and make sure that every detail of the architecture is, in the end, implemented as code. {gui}",
       "Think step by step and reason yourself to the right decisions to make sure we get it right.",
       "You will first lay out the names of the core classes, functions, methods that will be necessary, as well as a quick comment on their purpose.",
       "Then you will output the content of each file including complete code. Each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code:",
@@ -50,7 +50,7 @@
       "'''",
       "CODE",
       "```",
-      "You will start with the \"main\" file, then go to the ones that are imported by that file, and so on.",
+      "You will start with the \"index\" file, then go to the ones that are imported by that file, and so on.",
       "Please note that the code should be fully functional. Ensure to implement all functions. No placeholders (such as 'pass' in Python)."
     ]
   },
@@ -71,7 +71,7 @@
       "'''",
       "CODE",
       "```",
-      "As the {assistant_role}, to satisfy the new user's demand and equip the software with a beautiful graphical user interface (GUI), we will discuss and design many decorative images for GUI decoration. Now, we keep discussing the GUI beautification by listing some functionally independent elements in GUI that are being considered to be decorated by different pictures. For example, ten digits (0-9) in a calculator are functionally independent.",
+      "As the {assistant_role}, to satisfy the new user's demand and equip the webapplication with a beautiful graphical user interface (GUI), we will discuss and design many decorative images for GUI decoration. Now, we keep discussing the GUI beautification by listing some functionally independent elements in GUI that are being considered to be decorated by different pictures. For example, ten digits (0-9) in a calculator are functionally independent.",
       "To answer, use the format: \" FILENAME.png: DESCRIPTION\" where \"FILENAME\" is the filename of the image and \"DESCRIPTION\" denotes the detailed description of the independent elements. For example:",
       "'''",
       "button_1.png: The button with the number \"1\" on it.",
@@ -98,7 +98,7 @@
       "'''",
       "CODE",
       "```",
-      "As the {assistant_role}, to satisfy the new user's demand and equip the software with a beautiful graphical user interface (GUI), you will incorporate our designed images for GUI decoration. Here are some ready-made high-quality pictures and corresponding descriptions:",
+      "As the {assistant_role}, to satisfy the new user's demand and equip the webapplication with a beautiful graphical user interface (GUI), you will incorporate our designed images for GUI decoration. Here are some ready-made high-quality pictures and corresponding descriptions:",
       "{images}",
       "Note that the designed images have a fixed size of 256x256 pixels and the images are located in the same directory as all the Python files; please dynamically scaling these images according to the size of GUI, and use \"self.*\" to avoid displaying-related problems caused by automatic garbage collection. For example:",
       "```",
@@ -111,7 +111,7 @@
     "assistant_role_name": "Programmer",
     "user_role_name": "Chief Technology Officer",
     "phase_prompt": [
-      "According to the new user's task and our software designs listed below: ",
+      "According to the new user's task and our webapplication designs listed below: ",
       "Task: \"{task}\".",
       "Modality: \"{modality}\".",
       "Programming Language: \"{language}\"",
@@ -119,7 +119,7 @@
       "\"{codes}\"",
       "Unimplemented File:",
       "\"{unimplemented_file}\"",
-      "In our software, each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code:",
+      "In our webapplication, each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code:",
       "FILENAME",
       "```LANGUAGE",
       "'''",
@@ -127,27 +127,27 @@
       "'''",
       "CODE",
       "```",
-      "As the {assistant_role}, to satisfy the complete function of our developed software, you have to implement all methods in the {unimplemented_file} file which contains a unimplemented class. Now, implement all methods of the {unimplemented_file} and all other codes needed, then output the fully implemented codes, strictly following the required format."
+      "As the {assistant_role}, to satisfy the complete function of our developed webapplication, you have to implement all methods in the {unimplemented_file} file which contains a unimplemented class. Now, implement all methods of the {unimplemented_file} and all other codes needed, then output the fully implemented codes, strictly following the required format."
     ]
   },
   "CodeReviewComment": {
     "assistant_role_name": "Code Reviewer",
     "user_role_name": "Programmer",
     "phase_prompt": [
-      "According to the new user's task and our software designs: ",
+      "According to the new user's task and our webapplication designs: ",
       "Task: \"{task}\".",
       "Modality: \"{modality}\".",
       "Programming Language: \"{language}\"",
       "Ideas: \"{ideas}\"",
       "Codes:",
       "\"{codes}\"",
-      "As the {assistant_role}, to make the software directly operable without further coding, ChatDev have formulated the following regulations:",
+      "As the {assistant_role}, to make the webapplication directly operable without further coding, ChatDev have formulated the following regulations:",
       "1) all referenced classes should be imported;",
       "2) all methods should be implemented;",
       "3) all methods need to have the necessary comments;",
       "4) no potential bugs;",
       "5) The entire project conforms to the tasks proposed by the user;",
-      "6) most importantly, do not only check the errors in the code, but also the logic of code. Make sure that user can interact with generated software without losing any feature in the requirement;",
+      "6) most importantly, do not only check the errors in the code, but also the logic of code. Make sure that user can interact with generated webapplication without losing any feature in the requirement;",
       "Now, you should check the above regulations one by one and review the codes in detail, propose one comment with the highest priority about the codes, and give me instructions on how to fix. Tell me your comment with the highest priority and corresponding suggestions on revision. If the codes are perfect and you have no comment on them, return only one line like \"<INFO> Finished\"."
     ]
   },
@@ -164,7 +164,7 @@
       "\"{codes}\"",
       "Comments on Codes:",
       "\"{comments}\"",
-      "In the software, each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code. Format:",
+      "In the webapplication, each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code. Format:",
       "FILENAME",
       "```LANGUAGE",
       "'''",
@@ -172,7 +172,7 @@
       "'''",
       "CODE",
       "```",
-      "As the {assistant_role}, to satisfy the new user's demand and make the software creative, executive and robust, you should modify corresponding codes according to the comments. Then, output the full and complete codes with all bugs fixed based on the comments. Return all codes strictly following the required format."
+      "As the {assistant_role}, to satisfy the new user's demand and make the webapplication creative, executive and robust, you should modify corresponding codes according to the comments. Then, output the full and complete codes with all bugs fixed based on the comments. Return all codes strictly following the required format."
     ]
   },
   "CodeReviewHuman": {
@@ -188,7 +188,7 @@
       "\"{codes}\"",
       "Comments on Codes:",
       "\"{comments}\"",
-      "In the software, each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code. Format:",
+      "In the webapplication, each file must strictly follow a markdown code block format, where the following tokens must be replaced such that \"FILENAME\" is the lowercase file name including the file extension, \"LANGUAGE\" in the programming language, \"DOCSTRING\" is a string literal specified in source code that is used to document a specific segment of code, and \"CODE\" is the original code. Format:",
       "FILENAME",
       "```LANGUAGE",
       "'''",
@@ -196,7 +196,7 @@
       "'''",
       "CODE",
       "```",
-      "As the {assistant_role}, to satisfy the new user's demand and make the software creative, executive and robust, you should modify corresponding codes according to the comments. Then, output the full and complete codes with all bugs fixed based on the comments. Return all codes strictly following the required format."
+      "As the {assistant_role}, to satisfy the new user's demand and make the webapplication creative, executive and robust, you should modify corresponding codes according to the comments. Then, output the full and complete codes with all bugs fixed based on the comments. Return all codes strictly following the required format."
     ]
   },
   "TestErrorSummary": {
@@ -232,7 +232,7 @@
       "'''",
       "CODE",
       "```",
-      "As the {assistant_role}, to satisfy the new user's demand and make the software execute smoothly and robustly, you should modify the codes based on the error summary. Now, use the format exemplified above and modify the problematic codes based on the error summary. Output the codes that you fixed based on the test reported and corresponding explanations (strictly follow the format defined above, including FILENAME, LANGUAGE, DOCSTRING and CODE; incomplete \"TODO\" codes are strictly prohibited). If no bugs are reported, please return only one line like \"<INFO> Finished\"."
+      "As the {assistant_role}, to satisfy the new user's demand and make the webapplication execute smoothly and robustly, you should modify the codes based on the error summary. Now, use the format exemplified above and modify the problematic codes based on the error summary. Output the codes that you fixed based on the test reported and corresponding explanations (strictly follow the format defined above, including FILENAME, LANGUAGE, DOCSTRING and CODE; incomplete \"TODO\" codes are strictly prohibited). If no bugs are reported, please return only one line like \"<INFO> Finished\"."
     ]
   },
   "EnvironmentDoc": {
@@ -246,13 +246,13 @@
       "Ideas: \"{ideas}\"",
       "Codes: ",
       "\"{codes}\"",
-      "As the {assistant_role}, you should write a requirements.txt file, which is commonly used in Python projects to specify the dependencies or packages required for the project to run properly. It serves as a way to document and manage the project's dependencies in a standardized format. For example:",
-      "requirements.txt",
+      "As the {assistant_role}, you should write a package.json file, which is commonly used in React projects to specify the dependencies or packages required for the project to run properly. It serves as a way to document and manage the project's dependencies in a standardized format. For example:",
+      "package.json",
       "```",
       "numpy==1.19.2",
       "pandas>=1.1.4",
       "```",
-      "According to the codes and file format listed above, write a requirements.txt file to specify the dependencies or packages required for the project to run properly."
+      "According to the codes and file format listed above, write a package.json file to specify the dependencies or packages required for the project to run properly."
     ]
   },
   "Manual": {
@@ -268,7 +268,7 @@
       "\"{codes}\"",
       "Requirements:",
       "\"{requirements}\"",
-      "As the {assistant_role}, by using Markdown, you should write a manual.md file which is a detailed user manual to use the software, including introducing main functions of the software, how to install environment dependencies and how to use/play it. For example:",
+      "As the {assistant_role}, by using Markdown, you should write a manual.md file which is a detailed user manual to use the webapplication, including introducing main functions of the webapplication, how to install environment dependencies and how to use/play it. For example:",
       "manual.md",
       "```",
       "# LangChain",

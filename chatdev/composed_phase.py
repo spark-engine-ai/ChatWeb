@@ -181,7 +181,7 @@ class CodeCompleteAll(ComposedPhase):
         super().__init__(**kwargs)
 
     def update_phase_env(self, chat_env):
-        pyfiles = [filename for filename in os.listdir(chat_env.env_dict['directory']) if filename.endswith(".py")]
+        pyfiles = [filename for filename in os.listdir(chat_env.env_dict['directory']) if filename.endswith(".js")]
         num_tried = defaultdict(int)
         num_tried.update({filename: 0 for filename in pyfiles})
         self.phase_env.update({

@@ -26,7 +26,7 @@ class Codes:
             matches_extract = re.finditer(regex_extract, code, re.DOTALL)
             for match_extract in matches_extract:
                 file_name = match_extract.group(1)
-            file_name = file_name.lower().split("(")[0] + ".py"
+            file_name = file_name.lower().split("(")[0] + ".js"
             return file_name
 
         if generated_content != "":
@@ -39,7 +39,7 @@ class Codes:
                 group1 = match.group(1)
                 filename = extract_filename_from_line(group1)
                 if "__main__" in code:
-                    filename = "main.py"
+                    filename = "main.tsx"
                 if filename == "":  # post-processing
                     filename = extract_filename_from_code(code)
                 assert filename != ""
@@ -110,12 +110,12 @@ class Codes:
                                                                       str(self.version) + " " + phase_info)
             if self.version == 1.0:
                 os.system("cd {}; git submodule add ./{} {}".format(os.path.dirname(os.path.dirname(self.directory)),
-                                                                    "WareHouse/" + os.path.basename(self.directory),
-                                                                    "WareHouse/" + os.path.basename(self.directory)))
+                                                                    "ProjectOutput/" + os.path.basename(self.directory),
+                                                                    "ProjectOutput/" + os.path.basename(self.directory)))
                 git_online_log += "cd {}; git submodule add ./{} {}\n".format(
                     os.path.dirname(os.path.dirname(self.directory)),
-                    "WareHouse/" + os.path.basename(self.directory),
-                    "WareHouse/" + os.path.basename(self.directory))
+                    "ProjectOutput/" + os.path.basename(self.directory),
+                    "ProjectOutput/" + os.path.basename(self.directory))
                 log_and_print_online(rewrite_codes_content)
             log_and_print_online(git_online_log)
 
@@ -123,15 +123,15 @@ class Codes:
         content = ""
         for filename in self.codebooks.keys():
             content += "{}\n```{}\n{}\n```\n\n".format(filename,
-                                                       "python" if filename.endswith(".py") else filename.split(".")[
+                                                       "python" if filename.endswith(".js") else filename.split(".")[
                                                            -1], self.codebooks[filename])
         return content
 
     def _load_from_hardware(self, directory) -> None:
-        assert len([filename for filename in os.listdir(directory) if filename.endswith(".py")]) > 0
+        assert len([filename for filename in os.listdir(directory) if filename.endswith(".js")]) > 0
         for root, directories, filenames in os.walk(directory):
             for filename in filenames:
-                if filename.endswith(".py"):
+                if filename.endswith(".js"):
                     code = open(os.path.join(directory, filename), "r", encoding="utf-8").read()
                     self.codebooks[filename] = self._format_code(code)
         log_and_print_online("{} files read from {}".format(len(self.codebooks.keys()), directory))

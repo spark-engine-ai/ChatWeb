@@ -11,7 +11,7 @@
 
 ## 📖 Overview
 
-- **ChatDev** é uma **empresa de software virtual** que opera por meio de vários **agentes inteligentes** desempenhando
+- **ChatDev** é uma **empresa de webapplication virtual** que opera por meio de vários **agentes inteligentes** desempenhando
 diferentes papéis, incluindo Diretor Executivo <img src='../online_log/static/figures/ceo.png' height=20>, Diretor de Produtos <img src='../online_log/static/figures/cpo.png' height=20>, Diretor de Tecnologia <img src='../online_log/static/figures/cto.png' height=20>, programador <img src='../online_log/static/figures/programmer.png' height=20>, revisor <img src='../online_log/static/figures/reviewer.png' height=20>, testador <img src='../online_log/static/figures/tester.png' height=20>, designer de arte <img src='../online_log/static/figures/designer.png' height=20>. Esses
 agentes formam uma estrutura organizacional multiagente e estão unidos por uma missão de "revolucionar o mundo digital
 por meio da programação." Os agentes dentro do ChatDev **colaboram** participando de seminários funcionais especializados,
@@ -30,13 +30,13 @@ incluindo tarefas como design, codificação, teste e documentação.
   <img src='../misc/github.png' width=600>
   </p>
 * 20 de setembro de 2023: O modo **Interação Humano-Agent** agora está disponível! Você pode se envolver com a equipe do ChatDev desempenhando o papel de revisor <img src='../online_log/static/figures/reviewer.png' height=20> e fazendo sugestões ao programador <img src='../online_log/static/figures/programmer.png' height=20>;
-  tente ``python3 run.py --task [descrição_da_sua_ideia] --config "Human"``. Veja [guia](../wiki.md#human-agent-interaction) e [exemplo](../WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+  tente ``python3 run.py --task [descrição_da_sua_ideia] --config "Human"``. Veja [guia](../wiki.md#human-agent-interaction) e [exemplo](../ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
 <p align="center">
 <img src='../misc/Human_intro.png' width=600>
 </p>
 
-* 1º de setembro de 2023: O modo **Arte** está disponível agora! Você pode ativar o agente designer <img src='../online_log/static/figures/designer.png' height=20> para gerar imagens usadas no software;
-  try ``python3 run.py --task [descrição_da_sua_ideia] --config "Art"``. Veja o [guia](../wiki.md#art) e o [exemplo](../WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+* 1º de setembro de 2023: O modo **Arte** está disponível agora! Você pode ativar o agente designer <img src='../online_log/static/figures/designer.png' height=20> para gerar imagens usadas no webapplication;
+  try ``python3 run.py --task [descrição_da_sua_ideia] --config "Art"``. Veja o [guia](../wiki.md#art) e o [exemplo](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 * 28 de agosto de 2023: O sistema está disponível publicamente.
 * 17 de agosto de 2023: A versão v1.0.0 estava pronta para ser lançada.
 * 30 de julho de 2023: Os usuários podem personalizar as configurações do * ChatChain, Fase e Papel. Além disso, o modo de Log online e o modo de replay * agora são suportados.
@@ -78,7 +78,7 @@ Para começar, siga estas etapas:
    ```
    $env:OPENAI_API_KEY="your_OpenAI_API_key"
    ```
-5. **Construir o Seu Software:** Use o seguinte comando para iniciar a construção do seu software, substituindo
+5. **Construir o Seu Software:** Use o seguinte comando para iniciar a construção do seu webapplication, substituindo
    `[descrição_da_sua_ideia]` pela descrição da sua ideia e `[nome_do_projeto]` pelo nome do projeto desejado:
    No Unix/Linux:
    ```
@@ -88,17 +88,17 @@ Para começar, siga estas etapas:
    ```
    python run.py --task "[descrição_da_sua_ideia]" --name "[nome_do_projeto]"
    ```
-6. **Executar o Seu Software:** Uma vez gerado, você pode encontrar seu software no diretório `WareHouse` sob uma pasta
-   de projeto específica, como `project_name_DefaultOrganization_timestamp`. Execute seu software usando o seguinte
+6. **Executar o Seu Software:** Uma vez gerado, você pode encontrar seu webapplication no diretório `ProjectOutput` sob uma pasta
+   de projeto específica, como `project_name_DefaultOrganization_timestamp`. Execute seu webapplication usando o seguinte
    comando dentro desse diretório:
    No Unix/Linux:
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
    ```
    No Windows:
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
    ```
 
@@ -111,7 +111,7 @@ Para obter informações mais detalhadas, consulte nossa Wiki, onde você pode e
 - Uma visão geral do framework ChatDev.
 - Uma introdução abrangente a todos os parâmetros avançados na configuração do ChatChain.
 - Guias para personalizar o ChatDev, incluindo:
-  - ChatChain: Projete seu próprio processo de desenvolvimento de software (ou qualquer outro processo), como ``Análise de Demanda -> Codificação -> Teste -> Manual``.
+  - ChatChain: Projete seu próprio processo de desenvolvimento de webapplication (ou qualquer outro processo), como ``Análise de Demanda -> Codificação -> Teste -> Manual``.
   - Fase: Projete sua própria fase dentro do ChatChain, como ``Análise de Demanda``.
   -  Papel: Defina os diversos agentes em sua empresa, como ``Diretor Executivo``.
 
@@ -121,14 +121,14 @@ Para obter informações mais detalhadas, consulte nossa Wiki, onde você pode e
 
 **Empresa**: Criar sua própria "Empresa ChatDev" personalizada é fácil. Essa configuração personalizada envolve três arquivos JSON de configuração simples. Confira o exemplo fornecido no diretório ``CompanyConfig/Default``. Para instruções detalhadas sobre personalização, consulte nossa [Wiki](../wiki.md).
 
-**Software**: Sempre que você desenvolve software usando o ChatDev, é gerada uma pasta correspondente contendo todas as informações essenciais. Compartilhar seu trabalho conosco é tão simples quanto criar uma solicitação pull. Aqui está um exemplo: execute o comando ``python3 run.py --task "design a 2048 game" --name "2048"  --org "THUNLP" --config "Default"``. Isso criará um pacote de software e gerará uma pasta chamada ``/WareHouse/2048_THUNLP_timestamp``. Dentro dela, você encontrará:
+**Software**: Sempre que você desenvolve webapplication usando o ChatDev, é gerada uma pasta correspondente contendo todas as informações essenciais. Compartilhar seu trabalho conosco é tão simples quanto criar uma solicitação pull. Aqui está um exemplo: execute o comando ``python3 run.py --task "design a 2048 game" --name "2048"  --org "THUNLP" --config "Default"``. Isso criará um pacote de webapplication e gerará uma pasta chamada ``/ProjectOutput/2048_THUNLP_timestamp``. Dentro dela, você encontrará:
 
-- Todos os arquivos e documentos relacionados ao software do jogo 2048
-- Arquivos de configuração da empresa responsável por este software, incluindo os três arquivos JSON de configuração de ``CompanyConfig/Default``
-- Um registro abrangente detalhando o processo de construção do software que pode ser usado para replay (``timestamp.log``)
-- A prompt inicial usada para criar este software (``2048.prompt``)
+- Todos os arquivos e documentos relacionados ao webapplication do jogo 2048
+- Arquivos de configuração da empresa responsável por este webapplication, incluindo os três arquivos JSON de configuração de ``CompanyConfig/Default``
+- Um registro abrangente detalhando o processo de construção do webapplication que pode ser usado para replay (``timestamp.log``)
+- A prompt inicial usada para criar este webapplication (``2048.prompt``)
 
-**Veja o software contribuído pela comunidade [aqui](../Contribution.md)!**
+**Veja o webapplication contribuído pela comunidade [aqui](../Contribution.md)!**
 
 ## 👨‍💻‍ Contribuidores de Software
 

@@ -32,14 +32,14 @@
   <img src='../misc/github.png' width=600>
   </p>
 - 20 سبتمبر 2023: وضع **تفاعل الإنسان مع الوكيل** متاح الآن! يمكنك المشاركة مع فريق ChatDev من خلال لعب دور المراجع <img src='../online_log/static/figures/reviewer.png' height=20> وتقديم اقتراحات للمبرمج <img src='../online_log/static/figures/programmer.png' height=20>;
-  جرب ``python3 run.py --task [وصف فكرتك] --config "Human"``. راجع [الدليل](wiki.md#human-agent-interaction) و[المثال](WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+  جرب ``python3 run.py --task [وصف فكرتك] --config "Human"``. راجع [الدليل](wiki.md#human-agent-interaction) و[المثال](ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src
 
 ='../misc/Human_intro.png' width=600>
   </p>
 - 1 سبتمبر 2023: وضع **الفن** متاح الآن! يمكنك تنشيط وكيل المصمم <img src='../online_log/static/figures/designer.png' height=20> لإنشاء صور تستخدم في البرمجيات;
-  جرب ``python3 run.py --task [وصف فكرتك] --config "Art"``. راجع [الدليل](wiki.md#art) و[المثال](WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+  جرب ``python3 run.py --task [وصف فكرتك] --config "Art"``. راجع [الدليل](wiki.md#art) و[المثال](ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 - 28 أغسطس 2023: النظام متاح الآن للجمهور.
 - 17 أغسطس 2023: الإصدار v1.0.0 كان جاهزًا للإصدار.
 - 30 يوليو 2023: يمكن للمستخدمين تخصيص إعدادات ChatChain و Phase و Role. بالإضافة إلى ذلك، يتم دعم وضع السجل الأونلاين ووضع الاستعادة
@@ -119,12 +119,12 @@
 
    ```
 
-6. **تشغيل البرمجيات الخاصة بك:** بمجرد إنشاءها، يمكنك العثور على برمجياتك في دليل "WareHouse" تحت مجلد مشروع معين، مثل "project_name_DefaultOrganization_timestamp". قم بتشغيل البرمجيات باستخدام الأمر التالي داخل ذلك الدليل:
+6. **تشغيل البرمجيات الخاصة بك:** بمجرد إنشاءها، يمكنك العثور على برمجياتك في دليل "ProjectOutput" تحت مجلد مشروع معين، مثل "project_name_DefaultOrganization_timestamp". قم بتشغيل البرمجيات باستخدام الأمر التالي داخل ذلك الدليل:
    على نظام Unix/Linux:
 
    ```
 
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
 
    ```
@@ -133,7 +133,7 @@
 
    ```
 
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
 
    ```
@@ -161,7 +161,7 @@
 
 **الشركة**: إنشاء "شركة ChatDev" المخصصة الخاصة بك أمر سهل. يتضمن هذا الإعداد الشخصي ثلاثة ملفات JSON تكوينية بسيطة. تحقق من المثال المقدم في دليل "CompanyConfig/Default". للتعليمات التفصيلية حول التخصيص، يرجى الرجوع إلى [ويكي](wiki.md) لدينا.
 
-**البرمجيات**: في كل مرة تطوّر فيها برمجيات باستخدام ChatDev، يتم إنشاء مجلد مقابل يحتوي على جميع المعلومات الأساسية. مشاركة عملك معنا بسيطة مثل إنشاء طلب استدراج. إليك مثال: قم بتنفيذ الأمر "python3 run.py --task 'تصميم لعبة 2048' --name '2048' --org 'THUNLP' --config 'Default'". سيتم بذلك إنشاء حزمة برمجية وإنشاء مجلد بالاسم "/WareHouse/2048_THUNLP_timestamp". بداخله، ستجد:
+**البرمجيات**: في كل مرة تطوّر فيها برمجيات باستخدام ChatDev، يتم إنشاء مجلد مقابل يحتوي على جميع المعلومات الأساسية. مشاركة عملك معنا بسيطة مثل إنشاء طلب استدراج. إليك مثال: قم بتنفيذ الأمر "python3 run.py --task 'تصميم لعبة 2048' --name '2048' --org 'THUNLP' --config 'Default'". سيتم بذلك إنشاء حزمة برمجية وإنشاء مجلد بالاسم "/ProjectOutput/2048_THUNLP_timestamp". بداخله، ستجد:
 
 - جميع الملفات والوثائق المتعلقة ببرمجية لعبة 2048
 - ملفات تكوين الشركة المسؤولة عن هذه البرمجية، بما في ذلك ثلاث ملفات تكوين JSON من "CompanyConfig/Default"

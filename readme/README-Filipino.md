@@ -11,7 +11,7 @@
 
 ## 📖 Pangkalahatan
 
-- Ang **ChatDev** ay isang **birtwal na kumpanya ng software** na nag-ooperate sa pamamagitan ng iba't-ibang **matalinong ahente** na may iba't-ibang mga papel, kabilang ang Chief Executive Officer <img src='../online_log/static/figures/ceo.png' height=20>, Chief Product Officer <img src='../online_log/static/figures/cpo.png' height=20>, Chief Technology Officer <img src='../online_log/static/figures/cto.png' height=20>, programmer <img src='../online_log/static/figures/programmer.png' height=20>, reviewer <img src='../online_log/static/figures/reviewer.png' height=20>, tester <img src='../online_log/static/figures/tester.png' height=20>, at art designer <img src='../online_log/static/figures/designer.png' height=20>. Ang mga ahente na ito ay bumubuo ng isang multi-agent na istruktura ng organisasyon at nagkakaisa sa isang misyon na "baguhin ang digital na mundo sa pamamagitan ng programming." Ang mga ahente sa loob ng ChatDev ay **nagkakaisa** sa pamamagitan ng pagsali sa mga espesyalisadong seminar na may mga gawain tulad ng pagdi-disenyo, pagko-coding, pagte-test, at pagsusuri.
+- Ang **ChatDev** ay isang **birtwal na kumpanya ng webapplication** na nag-ooperate sa pamamagitan ng iba't-ibang **matalinong ahente** na may iba't-ibang mga papel, kabilang ang Chief Executive Officer <img src='../online_log/static/figures/ceo.png' height=20>, Chief Product Officer <img src='../online_log/static/figures/cpo.png' height=20>, Chief Technology Officer <img src='../online_log/static/figures/cto.png' height=20>, programmer <img src='../online_log/static/figures/programmer.png' height=20>, reviewer <img src='../online_log/static/figures/reviewer.png' height=20>, tester <img src='../online_log/static/figures/tester.png' height=20>, at art designer <img src='../online_log/static/figures/designer.png' height=20>. Ang mga ahente na ito ay bumubuo ng isang multi-agent na istruktura ng organisasyon at nagkakaisa sa isang misyon na "baguhin ang digital na mundo sa pamamagitan ng programming." Ang mga ahente sa loob ng ChatDev ay **nagkakaisa** sa pamamagitan ng pagsali sa mga espesyalisadong seminar na may mga gawain tulad ng pagdi-disenyo, pagko-coding, pagte-test, at pagsusuri.
 - Ang pangunahing layunin ng ChatDev ay mag-alok ng isang **madaling gamitin**, **mabilis ma-customize**, at **napapalawak** na framework, na batay sa malalaking modelo ng wika (LLMs) at naglilingkod bilang isang ideal na scenario para pag-aralan ang kolektibong kaalaman.
 
 <p align="center">
@@ -24,11 +24,11 @@
   <p align="center">
   <img src='../misc/github.png' width=600>
   </p>
-* Setyembre 20, 2023: Ang **Human-Agent-Interaction** mode ay available na! Maaari kang makilahok sa ChatDev team sa pamamagitan ng pagganap ng papel ng reviewer <img src='../online_log/static/figures/reviewer.png' height=20> at pagbibigay ng mga suhestiyon sa programmer <img src='../online_log/static/figures/programmer.png' height=20>; subukan ang ``python3 run.py --task [description_ng_ideya_mo] --config "Human"``. Tingnan ang [gabay](../wiki.md#human-agent-interaction) at [halimbawa](../WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+* Setyembre 20, 2023: Ang **Human-Agent-Interaction** mode ay available na! Maaari kang makilahok sa ChatDev team sa pamamagitan ng pagganap ng papel ng reviewer <img src='../online_log/static/figures/reviewer.png' height=20> at pagbibigay ng mga suhestiyon sa programmer <img src='../online_log/static/figures/programmer.png' height=20>; subukan ang ``python3 run.py --task [description_ng_ideya_mo] --config "Human"``. Tingnan ang [gabay](../wiki.md#human-agent-interaction) at [halimbawa](../ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
-* Setyembre 1, 2023: Ang **Art** mode ay available na! Maaari mong paganahin ang ahenteng designer <img src='../online_log/static/figures/designer.png' height=20> upang lumikha ng mga imahe na ginagamit sa software; subukan ang ``python3 run.py --task [description_ng_ideya_mo] --config "Art"``. Tingnan ang [gabay](../wiki.md#art) at [halimbawa](../WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+* Setyembre 1, 2023: Ang **Art** mode ay available na! Maaari mong paganahin ang ahenteng designer <img src='../online_log/static/figures/designer.png' height=20> upang lumikha ng mga imahe na ginagamit sa webapplication; subukan ang ``python3 run.py --task [description_ng_ideya_mo] --config "Art"``. Tingnan ang [gabay](../wiki.md#art) at [halimbawa](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 * Agosto 28, 2023: Ang sistema ay magagamit na ng publiko.
 * Agosto 17, 2023: Ang bersyon v1.0.0 ay handa na para ilabas.
 * Hulyo 30, 2023: Maaaring baguhin ng mga user ang mga ChatChain, Phase, at Role settings. Bukod dito, sinusuportahan na rin ang online Log mode at replay mode.
@@ -72,7 +72,7 @@ Sa Windows:
 $env:OPENAI_API_KEY="iyong_OpenAI_API_key"
 ```
 
-5. **Buoin ang Iyong Software:** Gamitin ang sumusunod na command upang simulan ang pagbuo ng iyong software, pinalitan ang `[description_ng_ideya_mo]` ng deskripsyon ng iyong ideya at `[project_name]` ng iyong napipiling pangalan ng proyekto:
+5. **Buoin ang Iyong Software:** Gamitin ang sumusunod na command upang simulan ang pagbuo ng iyong webapplication, pinalitan ang `[description_ng_ideya_mo]` ng deskripsyon ng iyong ideya at `[project_name]` ng iyong napipiling pangalan ng proyekto:
 ```
 Sa Unix/Linux:
 python3 run.py --task "[description_ng_ideya_mo]" --name "[project_name]"
@@ -82,15 +82,15 @@ Sa Windows:
 python run.py --task "[description_ng_ideya_mo]" --name "[project_name]"
 ```
 
-6. **I-takbo ang Iyong Software:** Kapag nailikha na, maaari mong hanapin ang iyong software sa direktoryo ng `WareHouse` sa ilalim ng isang partikular na folder ng proyekto, tulad ng `project_name_DefaultOrganization_timestamp`. I-takbo ang iyong software gamit ang sumusunod na command sa loob ng direktoryong iyon:
+6. **I-takbo ang Iyong Software:** Kapag nailikha na, maaari mong hanapin ang iyong webapplication sa direktoryo ng `ProjectOutput` sa ilalim ng isang partikular na folder ng proyekto, tulad ng `project_name_DefaultOrganization_timestamp`. I-takbo ang iyong webapplication gamit ang sumusunod na command sa loob ng direktoryong iyon:
 Sa Unix/Linux:
 ```
-cd WareHouse/project_name_DefaultOrganization_timestamp
+cd ProjectOutput/project_name_DefaultOrganization_timestamp
 python3 main.py
 ```
 Sa Windows:
 ```
-cd WareHouse/project_name_DefaultOrganization_timestamp
+cd ProjectOutput/project_name_DefaultOrganization_timestamp
 python main.py
 ```
 
@@ -103,7 +103,7 @@ Para sa mas detalyadong impormasyon, mangyaring tingnan ang aming [Wiki](../wiki
 - Isang pagsusuri ng framework ng ChatDev.
 - Isang kumprehensibong introduksyon sa lahat ng mga advanced na parameter sa ChatChain configuration.
 - Mga gabay para sa pagsasapanlipunan ng ChatDev, kabilang ang:
- - ChatChain: Mag-disenyo ng iyong sariling proseso sa pagpapaunlad ng software (o anumang ibang proseso), tulad ng ``DemandAnalysis -> Coding -> Testing -> Manual``.
+ - ChatChain: Mag-disenyo ng iyong sariling proseso sa pagpapaunlad ng webapplication (o anumang ibang proseso), tulad ng ``DemandAnalysis -> Coding -> Testing -> Manual``.
  - Yugto: Mag-disenyo ng iyong sariling yugto sa loob ng ChatChain, tulad ng ``DemandAnalysis``.
  - Bahagi: Paghahanap ng iba't-ibang mga ahente sa iyong kumpanya, tulad ng ``Chief Executive Officer``.
 
@@ -113,14 +113,14 @@ Para sa mas detalyadong impormasyon, mangyaring tingnan ang aming [Wiki](../wiki
 
 **Kumpanya**: Ang paglikha ng iyong sariling "Kompanya ng ChatDev" ay madali lamang. Ang personalisadong set-up na ito ay kinakailangan ng tatlong simpleng JSON configuration files. Tingnan ang halimbawa na ibinigay sa direktoryo ng ``CompanyConfig/Default``. Para sa detalyadong mga tagubilin sa pagsasapanlipunan, tingnan ang aming [Wiki](../wiki.md).
 
-**Software**: Kapag nadevelop mo ang software gamit ang ChatDev, isang kaugnay na folder ay nalilikha na naglalaman ng lahat ng mga kinakailangan impormasyon. Ang pagbibigay ng iyong trabaho sa amin ay kasimplehan ng pag-create ng pull request. Narito ang isang halimbawa: i-execute ang command ``python3 run.py --task "magdisenyo ng 2048 game" --name "2048" --org "THUNLP" --config "Default"``. Ito ay lalikha ng isang software package at mag-generate ng isang folder na may pangalang ``/WareHouse/2048_THUNLP_timestamp``. Dito, makakakita ka ng:
+**Software**: Kapag nadevelop mo ang webapplication gamit ang ChatDev, isang kaugnay na folder ay nalilikha na naglalaman ng lahat ng mga kinakailangan impormasyon. Ang pagbibigay ng iyong trabaho sa amin ay kasimplehan ng pag-create ng pull request. Narito ang isang halimbawa: i-execute ang command ``python3 run.py --task "magdisenyo ng 2048 game" --name "2048" --org "THUNLP" --config "Default"``. Ito ay lalikha ng isang webapplication package at mag-generate ng isang folder na may pangalang ``/ProjectOutput/2048_THUNLP_timestamp``. Dito, makakakita ka ng:
 
-- Lahat ng mga file at dokumento na may kaugnayan sa 2048 game software
-- Configuration files ng kumpanyang responsable sa software na ito, kabilang ang tatlong JSON config files mula sa ``CompanyConfig/Default``
-- Isang kumpletong log na nagdetalye ng proseso ng pagbuo ng software na maaaring gamitin sa replay (``timestamp.log``)
-- Ang orihinal na prompt na ginamit upang lumikha ng software na ito (``2048.prompt``)
+- Lahat ng mga file at dokumento na may kaugnayan sa 2048 game webapplication
+- Configuration files ng kumpanyang responsable sa webapplication na ito, kabilang ang tatlong JSON config files mula sa ``CompanyConfig/Default``
+- Isang kumpletong log na nagdetalye ng proseso ng pagbuo ng webapplication na maaaring gamitin sa replay (``timestamp.log``)
+- Ang orihinal na prompt na ginamit upang lumikha ng webapplication na ito (``2048.prompt``)
 
-**Tingnan ang mga naambag na software ng komunidad [dito](../Contribution.md)!**
+**Tingnan ang mga naambag na webapplication ng komunidad [dito](../Contribution.md)!**
 
 ### Mga Kontribyutor ng Software
 

@@ -64,27 +64,35 @@ class ChatEnv:
 
     def set_directory(self, directory):
         assert len(self.env_dict['directory']) == 0
-        self.env_dict['directory'] = directory
-        self.codes.directory = directory
-        self.requirements.directory = directory
-        self.manuals.directory = directory
 
-        if os.path.exists(self.env_dict['directory']) and len(os.listdir(directory)) > 0:
+        components_directory = os.path.join(directory, "components")
+
+        # Set the components directory as the working directory
+        self.env_dict['directory'] = components_directory
+        self.codes.directory = components_directory
+        self.requirements.directory = components_directory
+        self.manuals.directory = components_directory
+
+        # Check if the main directory exists, and copy if needed
+        if os.path.exists(directory) and len(os.listdir(directory)) > 0:
             new_directory = "{}.{}".format(directory, time.strftime("%Y%m%d%H%M%S", time.localtime()))
             shutil.copytree(directory, new_directory)
             print("{} Copied to {}".format(directory, new_directory))
+
+        # Create the components subdirectory under the main directory
         if self.config.clear_structure:
-            if os.path.exists(self.env_dict['directory']):
-                shutil.rmtree(self.env_dict['directory'])
-                os.mkdir(self.env_dict['directory'])
-                print("{} Created".format(directory))
-            else:
-                os.mkdir(self.env_dict['directory'])
+            if os.path.exists(components_directory):
+                shutil.rmtree(components_directory)
+            os.makedirs(components_directory, exist_ok=True)
+            print("{} Created".format(components_directory))
+        else:
+            os.makedirs(components_directory, exist_ok=True)
+
 
     def exist_bugs(self) -> tuple[bool, str]:
         directory = self.env_dict['directory']
 
-        success_info = "The software run successfully without errors."
+        success_info = "The webapplication run successfully without errors."
         try:
 
             # check if we are on windows or linux
@@ -107,7 +115,7 @@ class ChatEnv:
                                            )
             time.sleep(3)
             return_code = process.returncode
-            # Check if the software is still running
+            # Check if the webapplication is still running
             if process.poll() is None:
                 if "killpg" in dir(os):
                     os.killpg(os.getpgid(process.pid), signal.SIGTERM)

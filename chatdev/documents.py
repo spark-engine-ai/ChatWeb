@@ -15,7 +15,7 @@ class Documents():
                 regex = r"```\n(.*?)```"
                 matches = re.finditer(regex, self.generated_content, re.DOTALL)
                 for match in matches:
-                    filename = "requirements.txt"
+                    filename = "package.json"
                     doc = match.group(1)
                     self.docbooks[filename] = doc
             else:

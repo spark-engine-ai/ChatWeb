@@ -11,7 +11,7 @@
 
 ## 📖 Overview
 
-- **ChatDev** es una **empresa de software virtual** que opera a través de varios **agentes inteligentes** que desempeñan diferentes roles, incluyendo al Director Ejecutivo <img src='../online_log/static/figures/ceo.png' height=20>, Director de Producto <img src='../online_log/static/figures/cpo.png' height=20>, Director Tecnológico <img src='../online_log/static/figures/cto.png' height=20>, programador <img src='../online_log/static/figures/programmer.png' height=20>, revisor <img src='../online_log/static/figures/reviewer.png' height=20>, tester <img src='../online_log/static/figures/tester.png' height=20>, diseñador de arte <img src='../online_log/static/figures/designer.png' height=20>. Estos agentes forman una estructura organizacional multi-agente y están unidos por una misión de "revolucionar el mundo digital a través de la programación." Los agentes dentro de ChatDev **colaboran** participando en seminarios funcionales especializados, incluyendo tareas como diseñar, codificar, probar y documentar.
+- **ChatDev** es una **empresa de webapplication virtual** que opera a través de varios **agentes inteligentes** que desempeñan diferentes roles, incluyendo al Director Ejecutivo <img src='../online_log/static/figures/ceo.png' height=20>, Director de Producto <img src='../online_log/static/figures/cpo.png' height=20>, Director Tecnológico <img src='../online_log/static/figures/cto.png' height=20>, programador <img src='../online_log/static/figures/programmer.png' height=20>, revisor <img src='../online_log/static/figures/reviewer.png' height=20>, tester <img src='../online_log/static/figures/tester.png' height=20>, diseñador de arte <img src='../online_log/static/figures/designer.png' height=20>. Estos agentes forman una estructura organizacional multi-agente y están unidos por una misión de "revolucionar el mundo digital a través de la programación." Los agentes dentro de ChatDev **colaboran** participando en seminarios funcionales especializados, incluyendo tareas como diseñar, codificar, probar y documentar.
 - El objetivo principal de ChatDev es ofrecer un marco de trabajo **fácil de usar**, **altamente personalizable** y **extensible**, que se basa en modelos de grandems modelos de lenguaje (LLMs, por sus siglas en inglés) y sirve como un escenario ideal para estudiar la inteligencia colectiva.
 <p align="center">
   <img src='../misc/company.png' width=600>
@@ -24,12 +24,12 @@
   <img src='../misc/github.png' width=600>
   </p>
 * 20 de septiembre de 2023: ¡El modo **Interacción Humano-Agente** ya está disponible! Puedes involucrarte con el equipo de ChatDev asumiendo el rol de revisor <img src='../online_log/static/figures/reviewer.png' height=20> y haciendo sugerencias al programador <img src='../online_log/static/figures/programmer.png' height=20>;
-  prueba ``python3 run.py --task [description_of_your_idea] --config "Human"``. Consulta la [guía](../wiki.md#human-agent-interaction) y el [ejemplo](../WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+  prueba ``python3 run.py --task [description_of_your_idea] --config "Human"``. Consulta la [guía](../wiki.md#human-agent-interaction) y el [ejemplo](../ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
-* 1 de septiembre de 2023: ¡El modo **Arte** ya está disponible! Puedes activar al agente de diseño <img src='../online_log/static/figures/designer.png' height=20> para generar imágenes utilizadas en el software;
-  prueba ``python3 run.py --task [description_of_your_idea] --config "Art"``. Consulta la [guía](../wiki.md#art) y el [ejemplo](../WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+* 1 de septiembre de 2023: ¡El modo **Arte** ya está disponible! Puedes activar al agente de diseño <img src='../online_log/static/figures/designer.png' height=20> para generar imágenes utilizadas en el webapplication;
+  prueba ``python3 run.py --task [description_of_your_idea] --config "Art"``. Consulta la [guía](../wiki.md#art) y el [ejemplo](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 * 28 de agosto de 2023: El sistema está disponible al público.
 * 17 de agosto de 2023: La versión v1.0.0 estaba lista para ser lanzada.
 * 30 de julio de 2023: Los usuarios pueden personalizar los ajustes de ChatChain, Phase, y Role. Además, ahora se soportan tanto el modo Log en línea como el modo de repetición.
@@ -72,7 +72,7 @@ Para comenzar, sigue estos pasos:
    ```
    $env:OPENAI_API_KEY="tu_llave_de_OpenAI_API"
    ```
-5. **Construye Tu Software:** Usa el siguiente comando para iniciar la construcción de tu software,
+5. **Construye Tu Software:** Usa el siguiente comando para iniciar la construcción de tu webapplication,
    reemplazando `[description_of_your_idea]` con la descripción de tu idea y `[project_name]` con el nombre deseado para tu proyecto:
    En Unix/Linux:
    ```
@@ -82,16 +82,16 @@ Para comenzar, sigue estos pasos:
    ```
    python run.py --task "[description_de_tu_idea]" --name "[nombre_del_proyecto]"
    ```
-6. **Ejecuta Tu Software:** Una vez generado, puedes encontrar tu software en el directorio `WareHouse` bajo una carpeta de proyecto específica,
-   como `nombre_proyecto_OrganizationDefault_timestamp`. Ejecuta tu software usando el siguiente comando dentro de ese directorio:
+6. **Ejecuta Tu Software:** Una vez generado, puedes encontrar tu webapplication en el directorio `ProjectOutput` bajo una carpeta de proyecto específica,
+   como `nombre_proyecto_OrganizationDefault_timestamp`. Ejecuta tu webapplication usando el siguiente comando dentro de ese directorio:
    En Unix/Linux:
    ```
-   cd WareHouse/nombre_proyecto_OrganizationDefault_timestamp
+   cd ProjectOutput/nombre_proyecto_OrganizationDefault_timestamp
    python3 main.py
    ```
    En Windows:
    ```
-   cd WareHouse/nombre_proyecto_OrganizationDefault_timestamp
+   cd ProjectOutput/nombre_proyecto_OrganizationDefault_timestamp
    python main.py
    ```
 
@@ -105,7 +105,7 @@ Para obtener información más detallada, por favor refiérese a nuestro [Wiki](
 - Un resumen del marco de trabajo de ChatDev.
 - Una introducción exhaustiva a todos los parámetros avanzados en la configuración de ChatChain.
 - Guías para personalizar ChatDev, incluyendo:
-    - ChatChain: Diseña tu propio proceso de desarrollo de software (o cualquier otro proceso), tal
+    - ChatChain: Diseña tu propio proceso de desarrollo de webapplication (o cualquier otro proceso), tal
       como ``DemandAnalysis -> Coding -> Testing -> Manual``.
     - Fase: Diseña tu propia fase dentro de ChatChain, como ``DemandAnalysis``.
     - Rol: Definiendo los diversos agentes en tu empresa, como el ``Chief Executive Officer``.
@@ -121,18 +121,18 @@ necesitas ayuda!
 archivos JSON de configuración. Echa un vistazo al ejemplo proporcionado en el directorio ``CompanyConfig/Default``. Para instrucciones
 detalladas sobre la personalización, consulta nuestro [Wiki](../wiki.md).
 
-**Software**: Cada vez que desarrolles software usando ChatDev, se generará una carpeta correspondiente que contiene toda la
+**Software**: Cada vez que desarrolles webapplication usando ChatDev, se generará una carpeta correspondiente que contiene toda la
 información esencial. Compartir tu trabajo con nosotros es tan simple como hacer una solicitud de extracción. Aquí hay un ejemplo: ejecuta el
 comando ``python3 run.py --task "diseña un juego del a 2048 game" --name "2048"  --org "THUNLP" --config "Default"``. Esto creará
-un paquete de software y generará una carpeta llamada ``/WareHouse/2048_THUNLP_timestamp``. Dentro, encontrarás:
+un paquete de webapplication y generará una carpeta llamada ``/ProjectOutput/2048_THUNLP_timestamp``. Dentro, encontrarás:
 
-- Todos los archivos y documentos relacionados con el software del juego 2048
-- Archivos de configuración de la empresa responsable de este software, incluyendo los tres archivos JSON de configuración
+- Todos los archivos y documentos relacionados con el webapplication del juego 2048
+- Archivos de configuración de la empresa responsable de este webapplication, incluyendo los tres archivos JSON de configuración
   de ``CompanyConfig/Default``
-- Un registro comprensivo que detalla el proceso de construcción del software que se puede utilizar para reproducir (``timestamp.log``)
-- El prompt inicial utilizado para crear este software (``2048.prompt``)
+- Un registro comprensivo que detalla el proceso de construcción del webapplication que se puede utilizar para reproducir (``timestamp.log``)
+- El prompt inicial utilizado para crear este webapplication (``2048.prompt``)
 
-**¡Ve el software contribuido por la comunidad [aquí](../Contribution.md)!**
+**¡Ve el webapplication contribuido por la comunidad [aquí](../Contribution.md)!**
 
 ## 👨‍💻‍ Software Contributors
 

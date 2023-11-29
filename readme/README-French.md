@@ -25,12 +25,12 @@
   <img src='../misc/github.png' width=600>
   </p>
 * 20 septembre 2023 : Le mode **Interaction Humain-Agent** est maintenant disponible ! Vous pouvez interagir avec l'équipe ChatDev en jouant le rôle de l'examinateur <img src='../online_log/static/figures/reviewer.png' height=20> et en faisant des suggestions au programmeur <img src='../online_log/static/figures/programmer.png' height=20>;
-  essayez ``python3 run.py --task [description_de_votre_idée] --config "Humain"``. Voir le [guide](../wiki.md#human-agent-interaction) et l'[exemple](../WareHouse/Gomoku_HumanAgentInteraction_20230920135038).
+  essayez ``python3 run.py --task [description_de_votre_idée] --config "Humain"``. Voir le [guide](../wiki.md#human-agent-interaction) et l'[exemple](../ProjectOutput/Gomoku_HumanAgentInteraction_20230920135038).
   <p align="center">
   <img src='../misc/Human_intro.png' width=600>
   </p>
 * 1er septembre 2023 : Le mode **Art** est maintenant disponible ! Vous pouvez activer l'agent designer <img src='../online_log/static/figures/designer.png' height=20> pour générer des images utilisées dans le logiciel;
-  essayez ``python3 run.py --task [description_de_votre_idée] --config "Art"``. Voir le [guide](../wiki.md#art) et l'[exemple](../WareHouse/gomokugameArtExample_THUNLP_20230831122822).
+  essayez ``python3 run.py --task [description_de_votre_idée] --config "Art"``. Voir le [guide](../wiki.md#art) et l'[exemple](../ProjectOutput/gomokugameArtExample_THUNLP_20230831122822).
 * 28 août 2023 : Le système est désormais disponible au public.
 * 17 août 2023 : La version v1.0.0 était prête à être publiée.
 * 30 juillet 2023 : Les utilisateurs peuvent personnaliser les paramètres de ChatChain, Phase et Rôle. De plus, le mode journal en ligne et le mode de relecture sont désormais pris en charge.
@@ -86,18 +86,18 @@ redéfinir à chaque nouvelle instance de terminal.
    ```
    python run.py --task "[description_of_your_idea]" --name "[project_name]"
    ```
-6. **Exécutez Votre Logiciel :** Une fois généré, vous pouvez trouver votre logiciel dans le répertoire `WareHouse` sous un dossier
+6. **Exécutez Votre Logiciel :** Une fois généré, vous pouvez trouver votre logiciel dans le répertoire `ProjectOutput` sous un dossier
 de projet spécifique, tel que `project_name_DefaultOrganization_timestamp`. Exécutez votre logiciel avec la commande
 suivante dans ce répertoire :
 Sur Unix/Linux :
 
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python3 main.py
    ```
  Sous Windows :
    ```
-   cd WareHouse/project_name_DefaultOrganization_timestamp
+   cd ProjectOutput/project_name_DefaultOrganization_timestamp
    python main.py
    ```
 
@@ -131,7 +131,7 @@ instructions détaillées sur la personnalisation, reportez-vous à notre [Wiki]
 **Logiciel** : Chaque fois que vous développez un logiciel avec ChatDev, un dossier correspondant est généré contenant toutes les 
 informations essentielles. Partager votre travail avec nous est aussi simple que de faire une demande de pull. Voici un exemple : 
 exécutez la commande ``python3 run.py --task "concevoir un jeu 2048" --name "2048"  --org "THUNLP" --config "Default"``. Ceci 
-créera un paquet logiciel et générera un dossier nommé ``/WareHouse/2048_THUNLP_timestamp``. A l'intérieur, vous trouverez :
+créera un paquet logiciel et générera un dossier nommé ``/ProjectOutput/2048_THUNLP_timestamp``. A l'intérieur, vous trouverez :
 
 - Tous les fichiers et documents relatifs au logiciel de jeu 2048
 - Les fichiers de configuration de l'entreprise responsable de ce logiciel, y compris les trois fichiers JSON de configuration
