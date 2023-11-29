@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ChatInput from './ChatInput';
 import ChatMessages from './ChatMessages';
 const Main: React.FC = () => {
