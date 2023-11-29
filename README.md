@@ -77,6 +77,12 @@ Follow these steps to set up and run ChatWeb:
   - Redux
   - etc.
 
+- **Adding Icon Libraries:**
+  - Tabler Icons
+  - React Icons
+  - Ant UI Icons
+  - etc.
+
 - **Future Features:**
   - Mix and match JS/TS, UI kits, and frameworks based on arguments.
   - A component library for AI to select from prop-based components.
