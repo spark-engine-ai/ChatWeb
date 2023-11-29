@@ -38,9 +38,9 @@ Follow these steps to set up and run ChatWeb:
    ```
 
 5. **Run Your Application:**
-   Access your project in the `WareHouse` directory. Run your application with:
+   Access your project in the `ProjectOutput` directory. Run your application with:
    ```
-   cd WareHouse/<project_name>_timestamp
+   cd ProjectOutput/<project_name>_timestamp
    python3 main.py
    ```
 
