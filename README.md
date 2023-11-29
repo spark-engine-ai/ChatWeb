@@ -54,7 +54,7 @@ Follow these steps to set up and run ChatWeb:
   ```
   python run.py --task "[description_of_your_idea]" --name "[project_name]"
   ```
-  
+
 6. **Run Your Application:**
    Access your project in the `ProjectOutput` directory. Run your application with:
    ```
