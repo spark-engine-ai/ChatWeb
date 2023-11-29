@@ -35,13 +35,10 @@ Follow these steps to set up and run ChatWeb:
   your actual API key. Remember that this environment variable is session-specific, so you need to set it again if you
   open a new terminal session.
   On Unix/Linux:
-
   ```
   export OPENAI_API_KEY="your_OpenAI_API_key"
   ```
-
   On Windows:
-
   ```
   $env:OPENAI_API_KEY="your_OpenAI_API_key"
   ```
@@ -50,17 +47,14 @@ Follow these steps to set up and run ChatWeb:
   replacing `[description_of_your_idea]` with your idea's description and `[project_name]` with your desired project
   name:
   On Unix/Linux:
-
   ```
   python3 run.py --task "[description_of_your_idea]" --name "[project_name]"
   ```
-
   On Windows:
-
   ```
   python run.py --task "[description_of_your_idea]" --name "[project_name]"
   ```
-
+  
 6. **Run Your Application:**
    Access your project in the `ProjectOutput` directory. Run your application with:
    ```
