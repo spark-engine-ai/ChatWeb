@@ -41,7 +41,8 @@ Follow these steps to set up and run ChatWeb:
    Access your project in the `ProjectOutput` directory. Run your application with:
    ```
    cd ProjectOutput/<project_name>_timestamp
-   python3 main.py
+   npm install
+   npm run dev
    ```
 
 ## 🎉 News
