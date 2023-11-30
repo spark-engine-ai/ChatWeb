@@ -1,0 +1,1 @@
+build a login/signup page that has 2 tabs (login and signup). There should be inputs for email, username and password and then username and password for the login. Also make it so that the password input does not show the password and give this a title on the page called ChatWeb Login/Signup

@@ -1,0 +1,31 @@
+[2023-30-11 10:22:22 INFO] **[Preprocessing]**
+
+**ChatDev Starts** (20231130102222)
+
+**Timestamp**: 20231130102222
+
+**config_path**: C:\Users\jordi\OneDrive\Desktop\Dev\Website_Dev\Spark Engine\ChatWeb\CompanyConfig\Default\ChatChainConfig.json
+
+**config_phase_path**: C:\Users\jordi\OneDrive\Desktop\Dev\Website_Dev\Spark Engine\ChatWeb\CompanyConfig\Default\PhaseConfig.json
+
+**config_role_path**: C:\Users\jordi\OneDrive\Desktop\Dev\Website_Dev\Spark Engine\ChatWeb\CompanyConfig\Default\RoleConfig.json
+
+**task_prompt**: A highly detailed marketing agency website
+
+**project_name**: marketing agency
+
+**Log File**: C:\Users\jordi\OneDrive\Desktop\Dev\Website_Dev\Spark Engine\ChatWeb\ProjectOutput\marketing agency_DefaultOrganization_20231130102222.log
+
+**ChatDevConfig**:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+
+
+**ChatGPTConfig**:
+ChatGPTConfig(temperature=0.2, top_p=1.0, n=1, stream=False, stop=None, max_tokens=None, presence_penalty=0.0, frequency_penalty=0.0, logit_bias={}, user='')
+
+
+
+[2023-30-11 10:22:24 INFO] flask app.py did not start for online log

@@ -1,0 +1,31 @@
+Task:
+build a login/signup page that has 2 tabs (login and signup). There should be inputs for email, username and password and then username and password for the login. Also make it so that the password input does not show the password and give this a title on the page called ChatWeb Login/Signup
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+website
+
+Ideas:
+
+
+Language:
+ Next JS Tyepscript with Tailwind.
+
+Code_Version:
+3.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

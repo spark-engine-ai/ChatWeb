@@ -1,0 +1,31 @@
+Task:
+A social media profile card
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+web application
+
+Ideas:
+
+
+Language:
+ Next JS Tyepscript with Tailwind classes and the react-icons library.
+
+Code_Version:
+6.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

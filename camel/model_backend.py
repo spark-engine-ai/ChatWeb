@@ -47,7 +47,7 @@ class OpenAIModel(ModelBackend):
         super().__init__()
         self.model_type = model_type
         self.model_config_dict = model_config_dict
-        
+
     def run(self, *args, **kwargs) -> Dict[str, Any]:
         string = "\n".join([message["content"] for message in kwargs["messages"]])
         encoding = tiktoken.encoding_for_model(self.model_type.value)
@@ -74,8 +74,8 @@ class OpenAIModel(ModelBackend):
             response = openai.chat.completions.create(*args, **kwargs, model=self.model_type.value, **self.model_config_dict)
 
         cost = prompt_cost(
-                self.model_type.value, 
-                num_prompt_tokens=response["usage"]["prompt_tokens"], 
+                self.model_type.value,
+                num_prompt_tokens=response["usage"]["prompt_tokens"],
                 num_completion_tokens=response["usage"]["completion_tokens"]
         )
 
