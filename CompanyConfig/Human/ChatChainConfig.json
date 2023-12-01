@@ -53,7 +53,7 @@
     {
       "phase": "HumanAgentInteraction",
       "phaseType": "ComposedPhase",
-      "cycleNum": 5,
+      "cycleNum": 100,
       "Composition": [
         {
           "phase": "CodeReviewHuman",

@@ -1,0 +1,31 @@
+Task:
+A functioning music player that plays and displays my mp3s which are in the /music path and has a skip button, pause and play button using icons
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+web-based
+
+Ideas:
+
+
+Language:
+ Next JS Tyepscript with Tailwind classes and the react-icons library.
+
+Code_Version:
+8.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+
