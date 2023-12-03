@@ -69,10 +69,17 @@ Follow these steps to set up and run ChatWeb:
 
 ## 🛠️ Currently Supported Technologies
 
-- **Frameworks and Libraries:** Next JS, TypeScript, Tailwind CSS, React Icons.
-- **Modes:** Only the default mode is currently supported.
+- **Frameworks and Libraries:** React.js, Next.js, TypeScript, Tailwind CSS, React Icons.
+- **Modes:** Only the default and human mode is currently supported.
 
 ## 📝 To-Do List
+
+- **Adding Frameworks:**
+  - React.js ✓
+  - Next.js ✓
+  - Vue.js
+  - Angular.js
+  - etc.
 
 - **Adding UI Kits:**
   - Tailwind ✓
@@ -81,21 +88,6 @@ Follow these steps to set up and run ChatWeb:
   - Ant
   - Materialize
   - Bootstrap
-  - etc.
-
-- **Adding Frameworks:**
-  - React Native
-  - Next JS ✓
-  - Express
-  - Vue
-  - CRA (Create React App)
-  - Grommet
-  - Gatsby
-  - React Bootstrap
-  - Angular
-  - Node.js
-  - Remix
-  - Redux
   - etc.
 
 - **Adding Icon Libraries:**

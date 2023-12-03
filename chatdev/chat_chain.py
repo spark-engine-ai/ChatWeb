@@ -1,5 +1,6 @@
 import importlib
 import json
+import string
 import logging
 import os
 import shutil
@@ -17,6 +18,33 @@ from chatdev.utils import log_and_print_online, now
 def check_bool(s):
     return s.lower() == "true"
 
+class SafeFormatter(string.Formatter):
+    """A formatter class that doesn't throw a KeyError for missing placeholders."""
+    def get_value(self, key, args, kwargs):
+        return kwargs.get(key, '{' + key + '}')
+
+    def safe_format(self, format_string, **kwargs):
+        return self.format(format_string, **kwargs)
+
+def replace_placeholders(item, formatter, stack_config_data):
+    """Recursively replace placeholders in the given item."""
+    # Determine the language based on the 'typescript' flag in the stack configuration
+    jslanguage = "TypeScript" if stack_config_data.get('typescript', False) else "JavaScript"
+
+    if isinstance(item, dict):
+        return {k: replace_placeholders(v, formatter, stack_config_data) for k, v in item.items()}
+    elif isinstance(item, list):
+        return [replace_placeholders(v, formatter, stack_config_data) for v in item]
+    elif isinstance(item, str):
+        # Now use 'language' as a simple placeholder
+        return formatter.safe_format(
+            item,
+            framework=stack_config_data.get('framework', ''),
+            ui_kit=stack_config_data.get('ui_kit', ''),
+            jslanguage=jslanguage  # Use the computed language here
+            # Additional replacements can be added here
+        )
+    return item
 
 class ChatChain:
 
@@ -28,7 +56,8 @@ class ChatChain:
                  project_name: str = None,
                  org_name: str = None,
                  model_type: ModelType = ModelType.GPT_3_5_TURBO,
-                 code_path: str = None) -> None:
+                 code_path: str = None,
+                 stack_config: str = "REACT") -> None:
         """
 
         Args:
@@ -38,6 +67,7 @@ class ChatChain:
             task_prompt: the user input prompt for webapplication
             project_name: the user input name for webapplication
             org_name: the organization name of the human user
+            stack_config: name of the stack config file in the ProjectConfig folder (to determine the projects template)
         """
 
         # load config file
@@ -48,6 +78,8 @@ class ChatChain:
         self.org_name = org_name
         self.model_type = model_type
         self.code_path = code_path
+        self.stack_config = f"{stack_config}.json"
+        self.apply_stack_configuration()
 
         with open(self.config_path, 'r', encoding="utf8") as file:
             self.config = json.load(file)
@@ -103,6 +135,27 @@ class ChatChain:
                                          model_type=self.model_type,
                                          log_filepath=self.log_filepath)
             self.phases[phase] = phase_instance
+
+    def apply_stack_configuration(self):
+        # Load the stack configuration
+        template_config_path = os.path.join('ProjectConfig', self.stack_config)
+        with open(template_config_path, 'r', encoding='utf-8') as file:
+            self.stack_config_data = json.load(file)
+
+        # Load the company configuration
+        chat_chain_config_path = self.config_phase_path
+        with open(chat_chain_config_path, 'r', encoding='utf-8') as file:
+            chat_chain_config_data = json.load(file)
+
+        # Create an instance of SafeFormatter
+        safe_formatter = SafeFormatter()
+
+        # Apply the replacement function to the entire configuration
+        chat_chain_config_data = replace_placeholders(chat_chain_config_data, safe_formatter, self.stack_config_data)
+
+        # Save the modified company configuration back to a file
+        with open(chat_chain_config_path, 'w') as file:
+            json.dump(chat_chain_config_data, file, indent=4)
 
     def make_recruitment(self):
         """
@@ -200,35 +253,27 @@ class ChatChain:
         webapplication_path = os.path.join(directory, "_".join([self.project_name, self.org_name, self.start_time]))
         self.chat_env.set_directory(webapplication_path)
 
-        # Create specific subdirectories for Next.js TypeScript project
-        subdirectories = ["components", "public", "pages", "context", "types", "styles"]
-        for subdirectory in subdirectories:
-            path = os.path.join(webapplication_path, subdirectory)
-            os.makedirs(path, exist_ok=True)
-            print(f"Subdirectory '{subdirectory}' created at {path}")
+        # Load the configuration for the project template
+        template_config_path = os.path.join('ProjectConfig', self.stack_config)
+        with open(template_config_path, 'r', encoding='utf-8') as file:
+            template_config = json.load(file)
 
-        nextjs_typescript_tailwind_config = {
-            "next.config.js": "module.exports = {\n  reactStrictMode: true,\n};\n",
-            "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"es5\",\n    \"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": false,\n    \"forceConsistentCasingInFileNames\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"node\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"preserve\"\n  },\n  \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\"],\n  \"exclude\": [\"node_modules\"]\n}",
-            "package.json": "{\n  \"name\": \"" + self.project_name + "\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Website landing page built with React and Tailwind\",\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\"\n  },\n  \"dependencies\": {\n    \"autoprefixer\": \"^10.4.16\",\n   \"next\": \"^13.2.4\",\n    \"postcss\": \"^8.4.31\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"react-icons\": \"^4.12.0\"\n  },\n  \"devDependencies\":      {\n    \"@types/react\": \"^18.0.28\",\n    \"react-scripts\": \"^5.0.1\",\n    \"tailwindcss\": \"^3.3.5\",\n    \"typescript\": \"^4.9.5\"\n  },\n  \"browserslist\": {\n    \"production\": [\n      \">0.2%\",\n      \"not dead\",\n      \"not op_mini all\"\n    ],\n    \"development\": [\n      \"last 1 chrome version\",\n      \"last 1 firefox version\",\n      \"last 1 safari version\"\n    ]\n  }\n}",
-            "tailwind.config.js": "module.exports = {\n  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],\n  darkMode: false, // or 'media' or 'class'\n  theme: {\n    extend: {},\n  },\n  variants: {\n    extend: {},\n  },\n  plugins: [],\n};\n",
-            ".env": "# Environment variables\n# e.g., API_KEY=yourapikey\n",
-            ".gitignore": "node_modules/\n.next/\nout/\n*.log\n.env.local\n.env.development.local\n.env.test.local\n.env.production.local\n",
-            "postcss.config.js": "module.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n",
-            "next-env.d.ts": "// <reference types=\"next\" />\n// <reference types=\"next/types/global\" />\n",
-            "README.md": f"# {self.project_name}\n\nThis is a [Next.js](https://nextjs.org/) project bootstrapped with TypeScript and Tailwind CSS.\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\n...",
-            os.path.join("pages", "_app.tsx"): "import '../styles/globals.css'\n\nfunction MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />\n}\n\nexport default MyApp\n",
-            os.path.join("pages", "_document.tsx"): "import Document, { Html, Head, Main, NextScript } from 'next/document'\n\nclass MyDocument extends Document {\n  render() {\n    return (\n      <Html>\n        <Head />\n        <body>\n          <Main />\n          <NextScript />\n        </body>\n      </Html>\n    )\n  }\n}\n\nexport default MyDocument\n",
-            os.path.join("pages", "index.tsx"): "import MainComponent from '../components/main'\n\nexport default function Home() {\n  return <MainComponent />\n}\n",
-            os.path.join("pages", "404.tsx"): "export default function Custom404() {\n  return <h1>404 - Page Not Found</h1>\n}\n",
-            os.path.join("styles", "globals.css"): "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n"
-        }
+        # Define the source directory of the template files
+        source_template_dir = os.path.join('ProjectConfig', template_config['template_path'])
 
-        for file_name, content in nextjs_typescript_tailwind_config.items():
-            file_path = os.path.join(webapplication_path, file_name)
-            with open(file_path, "w") as file:
-                file.write(content)
-                print(f"{file_name} created with starter content at {file_path}")
+        # Define the destination directory where the project will be set up
+        destination_dir = os.path.join(directory, "_".join([self.project_name, self.org_name, self.start_time]))
+
+        # This function will copy all files and folders recursively from the source to the destination
+        def copy_template(src, dst):
+            if os.path.isdir(src):
+                shutil.copytree(src, dst, dirs_exist_ok=True)  # dirs_exist_ok is available in Python 3.8+
+            else:
+                shutil.copy(src, dst)
+
+        # Copy all files and folders from the template directory to the destination
+        copy_template(source_template_dir, destination_dir)
+        print(f"All files from {source_template_dir} have been copied to {destination_dir}")
 
         # copy config files to webapplication path
         shutil.copy(self.config_path, webapplication_path)
@@ -335,9 +380,14 @@ class ChatChain:
         logging.shutdown()
         time.sleep(1)
 
-        shutil.move(self.log_filepath,
-                    os.path.join(root + "/ProjectOutput", "_".join([self.project_name, self.org_name, self.start_time]), "/components",
-                                 os.path.basename(self.log_filepath)))
+        if 'components_path' in template_config:
+            # Normalize the components_path and ensure it does not start with a slash
+            components_path = template_config['components_path'].lstrip("/")
+            components_full_path = os.path.join(destination_dir, components_path)
+            os.makedirs(components_full_path, exist_ok=True)  # Ensure the directory exists
+            shutil.move(self.log_filepath,
+                        os.path.join(components_full_path, os.path.basename(self.log_filepath)))
+            print(f"Log file moved to {components_full_path}")
 
     # @staticmethod
     def self_task_improve(self, task_prompt):

@@ -4,6 +4,7 @@ import shutil
 import signal
 import subprocess
 import time
+import json
 from typing import Dict
 
 import openai
@@ -35,8 +36,9 @@ class ChatEnvConfig:
 
 
 class ChatEnv:
-    def __init__(self, chat_env_config: ChatEnvConfig):
+    def __init__(self, chat_env_config: ChatEnvConfig, stack_config: str = "REACT"):
         self.config = chat_env_config
+        self.stack_config = f"{stack_config}.json"
         self.roster: Roster = Roster()
         self.codes: Codes = Codes()
         self.proposed_images: Dict[str, str] = {}
@@ -54,6 +56,11 @@ class ChatEnv:
             "test_reports": ""
         }
 
+        # Load the configuration for the project template
+        template_config_path = os.path.join('ProjectConfig', f"{stack_config}.json")
+        with open(template_config_path, 'r', encoding='utf-8') as file:
+            self.template_config = json.load(file)
+
     @staticmethod
     def fix_module_not_found_error(test_reports):
         if "ModuleNotFoundError" in test_reports:
@@ -65,7 +72,8 @@ class ChatEnv:
     def set_directory(self, directory):
         assert len(self.env_dict['directory']) == 0
 
-        components_directory = os.path.join(directory, "components")
+        components_path = self.template_config.get('components_path', 'components').lstrip("/")
+        components_directory = os.path.join(directory, components_path)
 
         # Set the components directory as the working directory
         self.env_dict['directory'] = components_directory

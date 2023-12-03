@@ -70,6 +70,8 @@ parser.add_argument('--model', type=str, default="GPT_3_5_TURBO",
                     help="GPT Model, choose from {'GPT_3_5_TURBO','GPT_4','GPT_4_32K'}")
 parser.add_argument('--path', type=str, default="",
                     help="Your file directory, ChatDev will build upon your webapplication in the Incremental mode")
+parser.add_argument('--stack', type=str, default="REACT",
+                    help="Stack configuration file name under ProjectConfig/")
 args = parser.parse_args()
 
 # Start ChatDev
@@ -86,7 +88,8 @@ chat_chain = ChatChain(config_path=config_path,
                        project_name=args.name,
                        org_name=args.org,
                        model_type=args2type[args.model],
-                       code_path=args.path)
+                       code_path=args.path,
+                       stack_config=args.stack)
 
 # ----------------------------------------
 #          Init Log

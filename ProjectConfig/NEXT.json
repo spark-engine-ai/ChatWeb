@@ -1,0 +1,7 @@
+{
+  "template_path": "next_ts_tailwind",
+  "components_path": "/components",
+  "framework":"Next JS",
+  "ui_kit":"Tailwind UI kit classes",
+  "typescript": true
+}
