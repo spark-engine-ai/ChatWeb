@@ -60,16 +60,23 @@ Follow these steps to set up and run ChatWeb:
    ```
    cd ProjectOutput/<project_name>_timestamp
    npm install
-   npm run dev
+   npm run start
    ```
+   Keep in mind running the project is recommended when using Human mode at the same time. This way you can see any changes that the AI makes live. Running the web app might also be npm run start, serve etc. depending on the selected stack template.
 
 ## 🎉 News
 
-* **November 29th, 2023: ChatWeb project initiation.** Currently supporting Next JS, TypeScript, and Tailwind for efficient web app development.
+* **December 3rd, 2023: Custom stack templates!.** Use --stack "REACT" to use VUE, NEXT or REACT framework when building your app. We highly recommend using --config "Human" with it so you can get the AI team to iterate on the project while you host the web app locally through a second terminal window.
+
+* **November 29th, 2023: ChatWeb project initiation.** We begun building up an automated React architecture to build entire web apps locally using AI agents.
+
+## 📝 Build your own stack templates!
+
+* **How do I support my preferred stack?** Go to the ProjectConfig folder and create a json like the templates we already have, then specify the framework, UI kit and the path to the components folder. Finally set up a starter template folder for it like the ones we have and make sure to import a components/main file into the index of the project. The AI will automatically generate this main.tsx file when you initialize and locally clone the stack template.
 
 ## 🛠️ Currently Supported Technologies
 
-- **Frameworks and Libraries:** React.js, Next.js, TypeScript, Tailwind CSS, React Icons.
+- **Frameworks and Libraries:** React.js, Next.js, Vue.js, TypeScript, Tailwind CSS, React Icons.
 - **Modes:** Only the default and human mode is currently supported.
 
 ## 📝 To-Do List
@@ -77,7 +84,7 @@ Follow these steps to set up and run ChatWeb:
 - **Adding Frameworks:**
   - React.js ✓
   - Next.js ✓
-  - Vue.js
+  - Vue.js ✓
   - Angular.js
   - etc.
 
@@ -97,12 +104,12 @@ Follow these steps to set up and run ChatWeb:
   - etc.
 
 - **Future Features:**
-  - Mix and match JS/TS, UI kits, and frameworks based on arguments.
+  - Mix and match JS/TS, UI kits, and frameworks. ✓
   - A component library for AI to select from prop-based components.
-  - More modular configurations and custom config options.
+  - More modular configurations and custom config options. ✓
   - Ability to navigate and create subfolders.
   - API building support.
-  - Detect and iterate on project frameworks of existing projects.
+  - Detect and iterate existing projects.
   - SVG and PNG library plugins via Pexels and other royalty free image APIs
   - DALLE 3 image creation
 
