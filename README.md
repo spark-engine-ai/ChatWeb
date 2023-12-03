@@ -72,7 +72,12 @@ Follow these steps to set up and run ChatWeb:
 
 ## 📝 Build your own stack templates!
 
-* **How do I support my preferred stack?** Go to the ProjectConfig folder and create a json like the templates we already have, then specify the framework, UI kit and the path to the components folder. Finally set up a starter template folder for it like the ones we have and make sure to import a components/main file into the index of the project. The AI will automatically generate this main.tsx file when you initialize and locally clone the stack template.
+* **How do I support my preferred stack?**
+  - Go to the ProjectConfig folder
+  - Create a json like the templates we already have
+  - Specify the framework and UI kit
+  - Set up a starter template folder for it like the ones we have and make sure to import a components/main file into the index of the project. The AI will automatically generate this main.tsx file when you initialize and locally clone the stack template.
+  - Go back to the json and specify the path to your templates components folder so it knows where to make the main.tsx
 
 ## 🛠️ Currently Supported Technologies
 
