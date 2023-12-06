@@ -57,7 +57,7 @@ class ChatChain:
                  org_name: str = None,
                  model_type: ModelType = ModelType.GPT_3_5_TURBO,
                  code_path: str = None,
-                 stack_config: str = "REACT") -> None:
+                 stack_config: str = None) -> None:
         """
 
         Args:
@@ -96,11 +96,12 @@ class ChatChain:
         self.chat_turn_limit_default = 10
 
         # init ChatEnv
+
         self.chat_env_config = ChatEnvConfig(clear_structure=check_bool(self.config["clear_structure"]),
                                              gui_design=check_bool(self.config["gui_design"]),
                                              git_management=check_bool(self.config["git_management"]),
                                              incremental_develop=check_bool(self.config["incremental_develop"]))
-        self.chat_env = ChatEnv(self.chat_env_config)
+        self.chat_env = ChatEnv(self.chat_env_config, stack_config=stack_config)
 
         # the user input prompt will be self-improved (if set "self_improve": "True" in ChatChainConfig.json)
         # the self-improvement is done in self.preprocess
@@ -254,7 +255,7 @@ class ChatChain:
         self.chat_env.set_directory(webapplication_path)
 
         # Load the configuration for the project template
-        template_config_path = os.path.join('ProjectConfig', self.stack_config)
+        template_config_path = os.path.join('ProjectConfig',self.stack_config)
         with open(template_config_path, 'r', encoding='utf-8') as file:
             template_config = json.load(file)
 
@@ -379,15 +380,6 @@ class ChatChain:
 
         logging.shutdown()
         time.sleep(1)
-
-        if 'components_path' in template_config:
-            # Normalize the components_path and ensure it does not start with a slash
-            components_path = template_config['components_path'].lstrip("/")
-            components_full_path = os.path.join(destination_dir, components_path)
-            os.makedirs(components_full_path, exist_ok=True)  # Ensure the directory exists
-            shutil.move(self.log_filepath,
-                        os.path.join(components_full_path, os.path.basename(self.log_filepath)))
-            print(f"Log file moved to {components_full_path}")
 
     # @staticmethod
     def self_task_improve(self, task_prompt):

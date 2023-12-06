@@ -36,9 +36,9 @@ class ChatEnvConfig:
 
 
 class ChatEnv:
-    def __init__(self, chat_env_config: ChatEnvConfig, stack_config: str = "REACT"):
+    def __init__(self, chat_env_config: ChatEnvConfig, stack_config: str):
         self.config = chat_env_config
-        self.stack_config = f"{stack_config}.json"
+        self.stack_config = stack_config
         self.roster: Roster = Roster()
         self.codes: Codes = Codes()
         self.proposed_images: Dict[str, str] = {}
@@ -61,6 +61,10 @@ class ChatEnv:
         with open(template_config_path, 'r', encoding='utf-8') as file:
             self.template_config = json.load(file)
 
+        # Debugging: Print to confirm the loaded configuration
+        print(f"Loaded stack configuration: {stack_config}")
+        print(f"Loaded template configuration: {self.template_config}")
+
     @staticmethod
     def fix_module_not_found_error(test_reports):
         if "ModuleNotFoundError" in test_reports:
@@ -71,6 +75,9 @@ class ChatEnv:
 
     def set_directory(self, directory):
         assert len(self.env_dict['directory']) == 0
+
+        # Define the source directory of the template files
+        source_template_dir = os.path.join('ProjectConfig', self.template_config['template_path'])
 
         components_path = self.template_config.get('components_path', 'components').lstrip("/")
         components_directory = os.path.join(directory, components_path)

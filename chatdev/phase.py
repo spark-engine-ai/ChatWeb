@@ -490,16 +490,16 @@ class CodeReviewHuman(Phase):
         self.update_phase_env(chat_env)
         log_and_print_online(
             f"**[Human-Agent-Interaction]**\n\n"
-            f"Now you can participate in the development of the webapplication!\n"
-            f"The task is:  {chat_env.env_dict['task_prompt']}\n"
             f"Please input your feedback (in multiple lines). It can be bug report or new feature requirement.\n"
-            f"You are currently in the #{self.phase_env['cycle_index']} human feedback with a total of {self.phase_env['cycle_num']} feedbacks\n"
-            f"Type 'end' on a separate line to submit.\n"
-            f"You can type \"Exit\" to quit this mode at any time.\n"
+            f"\n"
+            f"Task: {chat_env.env_dict['task_prompt']}\n"
+            f"#{self.phase_env['cycle_index']}/{self.phase_env['cycle_num']} feedbacks given\n"
+            f"\n"
+            f"Type 'end' on a separate line to submit or type \"Exit\" to end the program.\n"
         )
         provided_comments = []
         while True:
-            user_input = input(">>>>>>")
+            user_input = input("User: ")
             if user_input.strip().lower() == "end":
                 break
             if user_input.strip().lower() == "exit":
