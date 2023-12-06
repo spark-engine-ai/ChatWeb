@@ -1,4 +1,4 @@
-# ChatWeb: Web Application Development Made Easy
+# LAuRA: Loop Automated React Architecture
 
 Originally forked from [ChatDev](https://github.com/OpenBMB/ChatDev).
 
@@ -8,57 +8,29 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
 
 ## ⚡️ Quickstart
 
-### Getting Started with ChatWeb
-
-Follow these steps to set up and run ChatWeb:
+### Getting Started with LAuRA
 
 1. **Clone the GitHub Repository:**
    ```
    git clone https://github.com/spark-engine-ai/ChatWeb.git
    ```
 
-2. **Set Up the Python Environment:**
-   Ensure you have Python 3.9 or higher. Create and activate an environment:
+2. **Install and Set Up LAuRA:**
+   Navigate to the `ChatWeb` directory where the setup.py file is and run:
    ```
-   conda create -n ChatWeb_env python=3.9 -y
-   conda activate ChatWeb_env
-   ```
-
-3. **Install Dependencies:**
-   Navigate to the `ChatWeb` directory and install required packages:
-   ```
-   cd ChatWeb
-   pip3 install -r requirements.txt
+   pip install -e .
    ```
 
-4. **Set OpenAI API Key:** Export your OpenAI API key as an environment variable. Replace `"your_OpenAI_API_key"` with
-   your actual API key. Remember that this environment variable is session-specific, so you need to set it again if you
-   open a new terminal session.
-   On Unix/Linux:
-   ```
-   export OPENAI_API_KEY="your_OpenAI_API_key"
-   ```
-   On Windows:
-   ```
-   $env:OPENAI_API_KEY="your_OpenAI_API_key"
-   ```
+3. **Run LAuRA:**
+   Simply type `laura` in the command line inside any directory to begin making a project. LAuRA will guide you through a form to fill in the arguments. For a list of available arguments, use `laura -h`.
 
-5. **Build Your Application:** Use the following command to initiate the building of your application,
-   replacing `[description_of_your_idea]` with your idea's description and `[project_name]` with your desired project
-   name:
-   On Unix/Linux:
-   ```
-   python3 run.py --task "[description_of_your_idea]" --name "[project_name]"
-   ```
-   On Windows:
-   ```
-   python run.py --task "[description_of_your_idea]" --name "[project_name]"
-   ```
+   Note: All project outputs will be stored in the `/laura` folder in the user's home directory.
 
-6. **Run Your Application:**
-   Access your project in the `projects` directory. Run your application with:
+4. **Run Your Application:**
+   Note: All project outputs will appear in the `laura/projects` folder in the user's home directory.
+
+   Navigate to it and run your application with:
    ```
-   cd projects/<project_name>_timestamp
    npm install
    npm run start
    ```
@@ -66,7 +38,9 @@ Follow these steps to set up and run ChatWeb:
 
 ## 🎉 News
 
-* **December 3rd, 2023: Custom stack templates!.** Use --stack "REACT" to use VUE, NEXT or REACT framework when building your app. We highly recommend using --config "Human" with it so you can get the AI team to iterate on the project while you host the web app locally through a second terminal window.
+* **December 6th, 2023: Global access.** LAuRA is now accessible from any path and will soon be able to output to any path as well as iterate inside any path. Join our Discord to contribute!
+
+* **December 3rd, 2023: Custom stack templates.** Use --stack "REACT" to use VUE, NEXT or REACT framework when building your app. We highly recommend using --config "Human" with it so you can get the AI team to iterate on the project while you host the web app locally through a second terminal window.
 
 * **November 29th, 2023: ChatWeb project initiation.** We begun building up an automated React architecture to build entire web apps locally using AI agents.
 
