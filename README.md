@@ -14,11 +14,11 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
 
 1. **Clone the GitHub Repository:**
    ```
-   git clone https://github.com/spark-engine-ai/ChatWeb.git
+   git clone https://github.com/spark-engine-ai/LAuRA.git
    ```
 
 2. **Install and Set Up LAuRA:**
-   Navigate to the `ChatWeb` directory where the setup.py file is and run:
+   Navigate to the `LAuRA` directory where the setup.py file is and run:
    ```
    pip install -e .
    ```
@@ -44,7 +44,7 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
 
 * **December 3rd, 2023: Custom stack templates.** Use --stack "REACT" to use VUE, NEXT or REACT framework when building your app. We highly recommend using --config "Human" with it so you can get the AI team to iterate on the project while you host the web app locally through a second terminal window.
 
-* **November 29th, 2023: ChatWeb project initiation.** We begun building up an automated React architecture to build entire web apps locally using AI agents.
+* **November 29th, 2023: LAuRA project initiation.** We begun building up an automated React architecture to build entire web apps locally using AI agents.
 
 ## 📝 Build your own stack templates!
 
