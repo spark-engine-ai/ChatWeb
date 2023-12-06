@@ -80,7 +80,7 @@ class OpenAIModel(ModelBackend):
         )
 
         log_and_print_online(
-            "**[OpenAI_Usage_Info Receive]**\nprompt_tokens: {}\ncompletion_tokens: {}\ntotal_tokens: {}\ncost: ${:.6f}\n".format(
+            " << Called Open AI >>\n\n          prompt_tokens: {}\n          completion_tokens: {}\n          total_tokens: {}\n          cost: ${:.6f}".format(
                 response["usage"]["prompt_tokens"], response["usage"]["completion_tokens"],
                 response["usage"]["total_tokens"], cost))
         if not isinstance(response, Dict):

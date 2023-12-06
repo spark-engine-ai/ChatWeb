@@ -269,7 +269,6 @@ class ChatChain:
 
         # Copy all files and folders from the template directory to the destination
         copy_template(source_template_dir, destination_dir)
-        print(f"All files from {source_template_dir} have been copied to {destination_dir}")
 
         # copy config files to webapplication path
         shutil.copy(self.config_path, webapplication_path)
@@ -305,7 +304,7 @@ class ChatChain:
         preprocess_msg += "**Log File**: {}\n\n".format(self.log_filepath)
         preprocess_msg += "**ChatDevConfig**:\n{}\n\n".format(self.chat_env.config.__str__())
         preprocess_msg += "**ChatGPTConfig**:\n{}\n\n".format(chat_gpt_config)
-        log_and_print_online(preprocess_msg)
+        # log_and_print_online(preprocess_msg)
 
         # init task prompt
         if check_bool(self.config['self_improve']):

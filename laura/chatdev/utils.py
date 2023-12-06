@@ -2,25 +2,70 @@ import html
 import logging
 import re
 import time
+import sys
+import threading
 
 import markdown
 import inspect
 from laura.camel.messages.system_messages import SystemMessage
 from laura.online_log.app import send_msg
 
+class Loader:
+    def __init__(self, duration=3, length=10):
+        self.duration = duration
+        self.length = length
+        self._stop_event = threading.Event()
+
+    def start(self):
+        self._stop_event.clear()
+        threading.Thread(target=self._run).start()
+
+    def stop(self):
+        self._stop_event.set()
+
+    def _run(self):
+        start_time = time.time()
+        while not self._stop_event.is_set() and time.time() - start_time < self.duration:
+            # Move the colon to the right
+            for i in range(self.length - 1):
+                loader = ' ' * i + '▄' + ' ' * (self.length - 1 - i)
+                sys.stdout.write(f"\r{loader}")
+                sys.stdout.flush()
+                time.sleep(0.2)
+
+            # Move the colon to the left
+            for i in range(self.length - 1, 0, -1):
+                loader = ' ' * i + '▄' + ' ' * (self.length - 1 - i)
+                sys.stdout.write(f"\r{loader}")
+                sys.stdout.flush()
+                time.sleep(0.2)
+
+        sys.stdout.write("\r" + " " * self.length + "\r")  # Clear the loader
 
 def now():
     return time.strftime("%Y%m%d%H%M%S", time.localtime())
 
+loader = Loader(duration=2)  # Create a loader instance
 
 def log_and_print_online(role, content=None):
+    global loader
+
+    # Stop the previous loader and clear its output
+    loader.stop()
+    sys.stdout.write("\r" + " " * loader.length + "\r")
+    sys.stdout.flush()
+
+    # Start a new loader
+    loader = Loader(duration=2)
+    loader.start()
+
     if not content:
         logging.info(role + "\n")
-        send_msg("System", role)
+        send_msg("Laura", role)
         print(role + "\n")
     else:
-        print(str(role) + ": " + str(content) + "\n")
-        logging.info(str(role) + ": " + str(content) + "\n")
+        print("Finished talking with " + str(role) + "\n")
+        logging.info(str(role) + "\n")
         if isinstance(content, SystemMessage):
             records_kv = []
             content.meta_dict["content"] = content.content
@@ -32,7 +77,7 @@ def log_and_print_online(role, content=None):
                 value = re.sub(r'<[^>]*>', '', value)
                 value = value.replace("\n", " ")
                 records_kv.append([key, value])
-            content = "**[SystemMessage**]\n\n" + convert_to_markdown_table(records_kv)
+            content = "[SystemMessage]\n\n" + convert_to_markdown_table(records_kv)
         else:
             role = str(role)
             content = str(content)
@@ -72,7 +117,7 @@ def log_arguments(func):
             value = value.replace("\n", " ")
             records_kv.append([name, value])
         records = f"**[{func.__name__}]**\n\n" + convert_to_markdown_table(records_kv)
-        log_and_print_online("System", records)
+        log_and_print_online("Laura", records)
 
         return func(*args, **kwargs)
 

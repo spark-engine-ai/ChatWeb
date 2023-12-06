@@ -62,8 +62,8 @@ class ChatEnv:
             self.template_config = json.load(file)
 
         # Debugging: Print to confirm the loaded configuration
-        print(f"Loaded stack configuration: {stack_config}")
-        print(f"Loaded template configuration: {self.template_config}")
+        print(f"\nLoaded stack configuration: {stack_config}\n")
+        print(f"Loaded template configuration: {self.template_config}\n\n")
 
     @staticmethod
     def fix_module_not_found_error(test_reports):
@@ -71,7 +71,6 @@ class ChatEnv:
             for match in re.finditer(r"No module named '(\S+)'", test_reports, re.DOTALL):
                 module = match.group(1)
                 subprocess.Popen("pip install {}".format(module), shell=True).wait()
-                log_and_print_online("**[CMD Execute]**\n\n[CMD] pip install {}".format(module))
 
     def set_directory(self, directory):
         assert len(self.env_dict['directory']) == 0
@@ -92,14 +91,12 @@ class ChatEnv:
         if os.path.exists(directory) and len(os.listdir(directory)) > 0:
             new_directory = "{}.{}".format(directory, time.strftime("%Y%m%d%H%M%S", time.localtime()))
             shutil.copytree(directory, new_directory)
-            print("{} Copied to {}".format(directory, new_directory))
 
         # Create the components subdirectory under the main directory
         if self.config.clear_structure:
             if os.path.exists(components_directory):
                 shutil.rmtree(components_directory)
             os.makedirs(components_directory, exist_ok=True)
-            print("{} Created".format(components_directory))
         else:
             os.makedirs(components_directory, exist_ok=True)
 
@@ -197,7 +194,6 @@ class ChatEnv:
 
         if not os.path.exists(directory):
             os.mkdir(directory)
-            print("{} Created.".format(directory))
 
         meta_filename = "meta.txt"
         with open(os.path.join(directory, meta_filename), "w", encoding="utf-8") as writer:
@@ -220,7 +216,6 @@ class ChatEnv:
                 os.remove(filepath)
             with open(filepath, "wb") as f:
                 f.write(r.content)
-                print("{} Downloaded".format(filepath))
 
         regex = r"(\w+.png)"
         joined_codes = self.get_codes()
@@ -238,7 +233,6 @@ class ChatEnv:
                 desc = self.incorporated_images[filename]
                 if desc.endswith(".png"):
                     desc = desc.replace(".png", "")
-                print("{}: {}".format(filename, desc))
                 response = openai.Image.create(
                     prompt=desc,
                     n=1,
@@ -255,7 +249,6 @@ class ChatEnv:
                 os.remove(filepath)
             with open(filepath, "wb") as f:
                 f.write(r.content)
-                print("{} Downloaded".format(filepath))
 
         regex = r"(\w+.png):(.*?)\n"
         matches = re.finditer(regex, messages, re.DOTALL)
@@ -273,14 +266,12 @@ class ChatEnv:
                 filename = match.group(1).strip()
                 desc = " ".join(filename.replace(".png", "").split("_"))
                 images[filename] = desc
-                print("{}: {}".format(filename, images[filename]))
 
         for filename in images.keys():
             if not os.path.exists(os.path.join(self.env_dict['directory'], filename)):
                 desc = images[filename]
                 if desc.endswith(".png"):
                     desc = desc.replace(".png", "")
-                print("{}: {}".format(filename, desc))
                 response = openai.Image.create(
                     prompt=desc,
                     n=1,

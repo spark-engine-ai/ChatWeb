@@ -55,7 +55,7 @@ class Codes:
         differ = difflib.Differ()
         for key in new_codes.codebooks.keys():
             if key not in self.codebooks.keys() or self.codebooks[key] != new_codes.codebooks[key]:
-                update_codes_content = "**[Update Codes]**\n\n"
+                update_codes_content = "\n\n"
                 update_codes_content += "{} updated.\n".format(key)
                 old_codes_content = self.codebooks[key] if key in self.codebooks.keys() else "# None"
                 new_codes_content = new_codes.codebooks[key]
