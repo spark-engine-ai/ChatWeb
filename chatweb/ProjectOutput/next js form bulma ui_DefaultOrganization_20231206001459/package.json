@@ -1,0 +1,34 @@
+{
+  "name": "my-AuRA-app",
+  "version": "1.0.0",
+  "description": "Website landing page built with AuRA, Next js and Bulma UI",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "bulma": "^0.9.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.9.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

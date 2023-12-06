@@ -15,7 +15,7 @@
     {
       "phase": "CodeCompleteAll",
       "phaseType": "ComposedPhase",
-      "cycleNum": 30,
+      "cycleNum": 10,
       "Composition": [
         {
           "phase": "CodeComplete",

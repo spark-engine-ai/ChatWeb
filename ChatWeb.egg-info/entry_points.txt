@@ -1,0 +1,2 @@
+[console_scripts]
+chatweb = chatweb.run:main
