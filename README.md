@@ -10,7 +10,7 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
 
 ## ⚡️ Quickstart
 
-### Getting Started with LAuRA
+### Get Started with LAuRA in just 5 Steps!
 
 1. **Clone the GitHub Repository:**
    ```
@@ -23,12 +23,28 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
    pip install -e .
    ```
 
-3. **Run LAuRA:**
-   Simply type `laura` in the command line inside any directory to begin making a project. LAuRA will guide you through a form to fill in the arguments. For a list of available arguments, use `laura -h`.
+3. **Set your OpenAI API Key:** Open a terminal anywhere you would like, but first remember to initialize your OpenAI API key like so:
+
+   On Unix/Linux:
+
+   ```
+   export OPENAI_API_KEY="your_OpenAI_API_key"
+   ```
+
+   On Windows:
+
+   ```
+   $env:OPENAI_API_KEY="your_OpenAI_API_key"
+   ```
+
+   Every time you open a new terminal to use LAuRA, you must initialize the API key. (we are working to make this easier btw)
+
+4. **Run LAuRA:**
+   Now type `laura` in the command line inside any directory to begin making a project. LAuRA will guide you through a form to fill in the arguments. For a list of available arguments, you can use `laura -h`.
 
    Note: All project outputs will be stored in the `/laura` folder in the user's home directory.
 
-4. **Run Your Application:**
+5. **Run Your Application:**
    Note: All project outputs will appear in the `laura/projects` folder in the user's home directory.
 
    Navigate to it and run your application with:
