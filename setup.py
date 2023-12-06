@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='ChatWeb',
+    name='Laura',
     version='1.0',  # Replace with your project's version
     packages=find_packages(),
     include_package_data=True,
@@ -23,7 +23,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'chatweb=chatweb.run:main',
+            'laura=laura.run:main',
         ],
     },
 )
