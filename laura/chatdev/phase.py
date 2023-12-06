@@ -477,7 +477,7 @@ class CodeReviewHuman(Phase):
         self.update_phase_env(chat_env)
         log_and_print_online(
             f"\n\n\n\nTime for your input!\n\n"
-            f"Please input your feedback (in multiple lines). It can be bug report or new feature requirement.\n"
+            f"Please give your feedback (in multiple lines). It can be a bug report or a new feature.\n"
             f"\n\n"
             f"Task: {chat_env.env_dict['task_prompt']}\n"
             f"#{self.phase_env['cycle_index']}/{self.phase_env['cycle_num']} feedbacks given\n"
