@@ -3,6 +3,7 @@
 .idea
 .vscode
 
+laura.exe/
 # env
 .env/
 .venv/
