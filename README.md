@@ -65,7 +65,7 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
 ## 📝 Build your own stack templates!
 
 * **How do I support my preferred stack?**
-  - Go to the ProjectConfig folder
+  - Go to the frameworks folder
   - Create a json like the templates we already have
   - Specify the framework and UI kit
   - Set up a starter template folder for it like the ones we have and make sure to import a components/main file into the index of the project. The AI will automatically generate this main.tsx file when you initialize and locally clone the stack template.

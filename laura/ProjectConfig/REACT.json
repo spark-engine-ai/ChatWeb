@@ -1,7 +1,0 @@
-{
-  "template_path": "react_ts_tailwind",
-  "components_path": "/src/components",
-  "framework":"React JS",
-  "ui_kit":"Tailwind UI kit classes",
-  "typescript": true
-}

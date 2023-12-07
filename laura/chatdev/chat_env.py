@@ -6,6 +6,7 @@ import subprocess
 import time
 import json
 from typing import Dict
+from pathlib import Path
 
 import openai
 import requests
@@ -57,7 +58,8 @@ class ChatEnv:
         }
 
         # Load the configuration for the project template
-        template_config_path = os.path.join('laura/ProjectConfig', f"{stack_config}.json")
+        home_directory = Path.home()
+        template_config_path = home_directory.joinpath('laura/frameworks', f"{stack_config}.json")
         with open(template_config_path, 'r', encoding='utf-8') as file:
             self.template_config = json.load(file)
 
@@ -74,9 +76,9 @@ class ChatEnv:
 
     def set_directory(self, directory):
         assert len(self.env_dict['directory']) == 0
-
+        home_directory = Path.home()
         # Define the source directory of the template files
-        source_template_dir = os.path.join('ProjectConfig', self.template_config['template_path'])
+        source_template_dir = home_directory.joinpath('frameworks', self.template_config['template_path'])
 
         components_path = self.template_config.get('components_path', 'components').lstrip("/")
         components_directory = os.path.join(directory, components_path)

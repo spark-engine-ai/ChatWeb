@@ -1,0 +1,7 @@
+{
+  "template_path": "vue_ts_tailwind",
+  "components_path": "/src/components",
+  "framework":"Vue JS",
+  "ui_kit":"Tailwind UI kit classes",
+  "typescript": true
+}

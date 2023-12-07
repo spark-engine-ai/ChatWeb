@@ -1,7 +1,0 @@
-{
-  "template_path": "next_ts_bulma",
-  "components_path": "/components",
-  "framework":"Next JS",
-  "ui_kit":"Bulma UI kit",
-  "typescript": true
-}

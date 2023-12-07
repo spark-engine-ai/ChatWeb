@@ -70,7 +70,7 @@ parser.add_argument('--model', type=str, default="GPT_3_5_TURBO",
 parser.add_argument('--path', type=str, default="",
                     help="Your file directory, LAuRA will build upon your web application in the Incremental mode")
 parser.add_argument('--stack', type=str, default="REACT",
-                    help="Stack configuration file name under ProjectConfig/")
+                    help="Stack configuration file name under frameworks/")
 args = parser.parse_args()
 
 # ASCII Art for LAuRA

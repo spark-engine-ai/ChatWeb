@@ -68,7 +68,7 @@ class ChatChain:
             task_prompt: the user input prompt for webapplication
             project_name: the user input name for webapplication
             org_name: the organization name of the human user
-            stack_config: name of the stack config file in the ProjectConfig folder (to determine the projects template)
+            stack_config: name of the stack config file in the frameworks folder (to determine the projects template)
         """
 
         # load config file
@@ -140,12 +140,14 @@ class ChatChain:
 
     def apply_stack_configuration(self):
         # Load the stack configuration
-        template_config_path = os.path.join('laura/ProjectConfig', self.stack_config)
+        home_directory = Path.home()
+        template_config_path = home_directory.joinpath('laura/frameworks', self.stack_config)
         with open(template_config_path, 'r', encoding='utf-8') as file:
             self.stack_config_data = json.load(file)
 
         # Load the company configuration
-        chat_chain_config_path = self.config_phase_path
+        chat_chain_config_path = home_directory.joinpath(self.config_phase_path)
+
         with open(chat_chain_config_path, 'r', encoding='utf-8') as file:
             chat_chain_config_data = json.load(file)
 
@@ -250,15 +252,16 @@ class ChatChain:
         self.chat_env.set_directory(webapplication_path)
 
         # Load the configuration for the project template
-        template_config_path = os.path.join('laura/ProjectConfig',self.stack_config)
+        home_directory = Path.home()
+        template_config_path = home_directory.joinpath('laura/frameworks',self.stack_config)
         with open(template_config_path, 'r', encoding='utf-8') as file:
             template_config = json.load(file)
 
         # Define the source directory of the template files
-        source_template_dir = os.path.join('laura/ProjectConfig', template_config['template_path'])
+        source_template_dir = home_directory.joinpath('laura/frameworks', template_config['template_path'])
 
         # Define the destination directory where the project will be set up
-        destination_dir = os.path.join(directory, "_".join([self.project_name, self.org_name, self.start_time]))
+        destination_dir = home_directory.joinpath(directory, "_".join([self.project_name, self.org_name, self.start_time]))
 
         # This function will copy all files and folders recursively from the source to the destination
         def copy_template(src, dst):

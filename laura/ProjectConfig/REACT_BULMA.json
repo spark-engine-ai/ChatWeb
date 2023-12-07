@@ -1,7 +1,0 @@
-{
-  "template_path": "react_ts_bulma",
-  "components_path": "/src/components",
-  "framework":"React JS",
-  "ui_kit":"Bulma UI kit",
-  "typescript": true
-}
