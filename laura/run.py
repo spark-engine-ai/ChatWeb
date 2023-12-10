@@ -113,7 +113,7 @@ if len(sys.argv) == 1:
     # args.config = input("Which mode would you like to use? -> ") or "Human"
     # args.model = input("Enter the GPT Model: ") or "GPT_3_5_TURBO"
     # args.path = input("Enter your file directory [default path]: ") or ""
-    args.stack = input("Enter the stack configuration file name (default is REACT): ") or "REACT"
+    # args.stack = input("Enter the stack configuration file name (default is REACT): ") or "REACT"
 
 # Start ChatDev
 
