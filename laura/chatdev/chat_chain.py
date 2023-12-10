@@ -11,9 +11,9 @@ from pathlib import Path
 from laura.camel.agents import RolePlaying
 from laura.camel.configs import ChatGPTConfig
 from laura.camel.typing import TaskType, ModelType
-from laura..chat_env import ChatEnv, ChatEnvConfig
-from laura..statistics import get_info
-from laura..utils import log_and_print_online, now
+from laura.chat_env import ChatEnv, ChatEnvConfig
+from laura.statistics import get_info
+from laura.utils import log_and_print_online, now
 
 
 def check_bool(s):
@@ -118,11 +118,11 @@ class ChatChain:
         self.start_time, self.log_filepath = self.get_logfilepath()
 
         # init SimplePhase instances
-        # import all used phases in PhaseConfig.json from laura..phase
+        # import all used phases in PhaseConfig.json from laura.phase
         # note that in PhaseConfig.json there only exist SimplePhases
         # ComposedPhases are defined in ChatChainConfig.json and will be imported in self.execute_step
-        self.compose_phase_module = importlib.import_module("laura..composed_phase")
-        self.phase_module = importlib.import_module("laura..phase")
+        self.compose_phase_module = importlib.import_module("laura.composed_phase")
+        self.phase_module = importlib.import_module("laura.phase")
         self.phases = dict()
         for phase in self.config_phase:
             assistant_role_name = self.config_phase[phase]['assistant_role_name']
@@ -191,14 +191,14 @@ class ChatChain:
                                                            self.chat_turn_limit_default if max_turn_step <= 0 else max_turn_step,
                                                            need_reflect)
             else:
-                raise RuntimeError(f"Phase '{phase}' is not yet implemented in laura..phase")
+                raise RuntimeError(f"Phase '{phase}' is not yet implemented in laura.phase")
         # For ComposedPhase, we create instance here then conduct the "ComposedPhase.execute" method
         elif phase_type == "ComposedPhase":
             cycle_num = phase_item['cycleNum']
             composition = phase_item['Composition']
             compose_phase_class = getattr(self.compose_phase_module, phase)
             if not compose_phase_class:
-                raise RuntimeError(f"Phase '{phase}' is not yet implemented in laura..compose_phase")
+                raise RuntimeError(f"Phase '{phase}' is not yet implemented in laura.compose_phase")
             compose_phase_instance = compose_phase_class(phase_name=phase,
                                                          cycle_num=cycle_num,
                                                          composition=composition,

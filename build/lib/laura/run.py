@@ -21,7 +21,7 @@ from laura.camel.typing import ModelType
 root = os.path.dirname(__file__)
 sys.path.append(root)
 
-from laura..chat_chain import ChatChain
+from laura.chat_chain import ChatChain
 
 def main(company):
     """

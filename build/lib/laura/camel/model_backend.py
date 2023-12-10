@@ -18,8 +18,8 @@ import openai
 import tiktoken
 
 from laura.camel.typing import ModelType
-from laura..statistics import prompt_cost
-from laura..utils import log_and_print_online
+from laura.statistics import prompt_cost
+from laura.utils import log_and_print_online
 
 
 class ModelBackend(ABC):

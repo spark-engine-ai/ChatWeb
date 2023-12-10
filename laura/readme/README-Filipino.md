@@ -162,4 +162,4 @@ primaryClass={cs.SE}
 
 ## Makipag-ugnay
 
-Kung mayroon kang anumang mga tanong, puna, o nais makipag-ugnay, huwag kang mag-atubiling makipag-ugnay sa amin sa pamamagitan ng email sa [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com)
+Kung mayroon kang anumang mga tanong, puna, o nais makipag-ugnay, huwag kang mag-atubiling makipag-ugnay sa amin sa pamamagitan ng email sa [laura.openbmb@outlook.com](mailto:laura.openbmb@outlook.com)

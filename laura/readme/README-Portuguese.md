@@ -178,4 +178,4 @@ Para obter informações mais detalhadas, consulte nossa Wiki, onde você pode e
 
 ## 📬 Contato
 
-Se você tiver alguma dúvida, feedback ou gostaria de entrar em contato, não hesite em nos enviar um e-mail para [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com)
+Se você tiver alguma dúvida, feedback ou gostaria de entrar em contato, não hesite em nos enviar um e-mail para [laura.openbmb@outlook.com](mailto:laura.openbmb@outlook.com)

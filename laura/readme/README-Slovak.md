@@ -188,4 +188,4 @@ vytvorí softvérový balík a vygeneruje priečinok s názvom ``/projects/2048_
 
 ## 📬 Kontakt
 
-Ak máte akékoľvek otázky, spätnú väzbu alebo by ste nás chceli kontaktovať, neváhajte nás kontaktovať e-mailom na adrese [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com)
+Ak máte akékoľvek otázky, spätnú väzbu alebo by ste nás chceli kontaktovať, neváhajte nás kontaktovať e-mailom na adrese [laura.openbmb@outlook.com](mailto:laura.openbmb@outlook.com)

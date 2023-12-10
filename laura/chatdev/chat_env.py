@@ -11,10 +11,10 @@ from pathlib import Path
 import openai
 import requests
 
-from laura..codes import Codes
-from laura..documents import Documents
-from laura..roster import Roster
-from laura..utils import log_and_print_online
+from laura.codes import Codes
+from laura.documents import Documents
+from laura.roster import Roster
+from laura.utils import log_and_print_online
 
 
 class ChatEnvConfig:
