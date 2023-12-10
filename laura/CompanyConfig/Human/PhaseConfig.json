@@ -17,7 +17,7 @@
             "Modality: \"{modality}\".",
             "Ideas: \"{ideas}\".",
             "We have decided to complete the task through a executable webapplication implemented via a programming language. ",
-            "As the {assistant_role}, to satisfy the new user's demand and make the webapplication realizable, you should propose the programming language of React JS with Tailwind UI kit classes and TypeScript along with the react-icons library.",
+            "As the {assistant_role}, to satisfy the new user's demand and make the webapplication realizable, you should propose the programming language of {framework} with {ui_kit} and TypeScript along with the react-icons library.",
             "Note that we must ONLY discuss the target programming language and do not discuss anything else! Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion and conclude the best programming language we have discussed without any other words or reasons, return only one line using the format: \"<INFO> *\" where \"*\" represents a programming language."
         ]
     },
@@ -40,7 +40,7 @@
             "CODE",
             "```",
             "You will start with the \"main\" file to first import the other files that you will make. The \"main\" file is where all the main components link to (components can still import other components though)",
-            "Please note that the code should be fully functional, with no comments in the files and all components should have a highly detailed responsive UI design using many Tailwind UI kit classes, React JS and TypeScript using lorem ipsum filler content unless specified.",
+            "Please note that the code should be fully functional, with no comments in the files and all components should have a highly detailed responsive UI design using many {ui_kit}, {framework} and TypeScript using lorem ipsum filler content unless specified.",
             "Ensure to implement all functions and you must use things like border radius, subtle box shadows, borders, gradients etc. to build beautiful UI.",
             "Remember, all components you import must be lowercase when it comes to the file names"
         ]
@@ -63,7 +63,7 @@
             "CODE",
             "```",
             "As the {assistant_role}, to satisfy the complete function of our developed webapplication, you have to implement all methods in the {unimplemented_file} file which contains a unimplemented class. Now, implement all methods of the {unimplemented_file} and all other codes needed, then output the fully implemented codes, strictly following the required format.",
-            "You must make sure to use as much detail as possible using Tailwind UI kit classes and the react-icons library. Use stuff like border radius, subtle box shadows, borders, gradients etc.",
+            "You must make sure to use as much detail as possible using {ui_kit} and the react-icons library. Use stuff like border radius, subtle box shadows, borders, gradients etc.",
             "All components you import must be lowercase when it comes to the file names"
         ]
     },
@@ -81,7 +81,7 @@
             "As the {assistant_role}, to make the webapplication directly operable without further coding, ChatDev have formulated the following regulations:",
             "1) all referenced classes should be imported;",
             "2) all methods should be implemented;",
-            "3) every tag in every component uses Tailwind UI kit classes classes for very high quality styling and is as detailed as possible with the most styling for the best ui results;",
+            "3) every tag in every component uses {ui_kit} classes for very high quality styling and is as detailed as possible with the most styling for the best ui results;",
             "4) no potential bugs;",
             "5) All the components are imported correctly and their files are lowercase;",
             "6) most importantly, do not only check the errors in the code, but also the logic of code. Make sure that user can interact with generated webapplication without losing any feature in the requirement;",

@@ -58,7 +58,7 @@ class ComposedPhase(ABC):
             assistant_role_name = self.config_phase[phase]['assistant_role_name']
             user_role_name = self.config_phase[phase]['user_role_name']
             phase_prompt = "\n".join(self.config_phase[phase]['phase_prompt'])
-            phase_module = importlib.import_module("laura.phase")
+            phase_module = importlib.import_module("laura.chatdev.phase")
             phase_class = getattr(phase_module, phase)
             phase_instance = phase_class(assistant_role_name=assistant_role_name,
                                          user_role_name=user_role_name,
@@ -155,7 +155,7 @@ class ComposedPhase(ABC):
                 else:
                     print(f"Phase '{phase}' is not yet implemented. \
                             Please write its config in phaseConfig.json \
-                            and implement it in laura.phase")
+                            and implement it in laura.chatdev.phase")
         chat_env = self.update_chat_env(chat_env)
         return chat_env
 

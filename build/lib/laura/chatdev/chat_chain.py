@@ -118,7 +118,7 @@ class ChatChain:
         self.start_time, self.log_filepath = self.get_logfilepath()
 
         # init SimplePhase instances
-        # import all used phases in PhaseConfig.json from laura.phase
+        # import all used phases in PhaseConfig.json from laura.chatdev.phase
         # note that in PhaseConfig.json there only exist SimplePhases
         # ComposedPhases are defined in ChatChainConfig.json and will be imported in self.execute_step
         self.compose_phase_module = importlib.import_module("laura.chatdev.composed_phase")
@@ -191,7 +191,7 @@ class ChatChain:
                                                            self.chat_turn_limit_default if max_turn_step <= 0 else max_turn_step,
                                                            need_reflect)
             else:
-                raise RuntimeError(f"Phase '{phase}' is not yet implemented in laura.phase")
+                raise RuntimeError(f"Phase '{phase}' is not yet implemented in laura.chatdev.phase")
         # For ComposedPhase, we create instance here then conduct the "ComposedPhase.execute" method
         elif phase_type == "ComposedPhase":
             cycle_num = phase_item['cycleNum']

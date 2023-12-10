@@ -75,29 +75,26 @@ args = parser.parse_args()
 
 # ASCII Art for LAuRA
 laura_ascii_art = """
-___________________________________________
+    ___________________________________________
 
- ▄▄▄     ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄
-█   █   █       █  █ █  █   ▄  █ █       █
-█   █   █   ▄   █  █ █  █  █ █ █ █   ▄   █
-█   █   █  █▄█  █  █▄█  █   █▄▄█▄█  █▄█  █
-█   █▄▄▄█       █       █    ▄▄  █       █
-█       █   ▄   █       █   █  █ █   ▄   █
-█▄▄▄▄▄▄▄█▄▄█ █▄▄█▄▄▄▄▄▄▄█▄▄▄█  █▄█▄▄█ █▄▄█
+    ██╗      █████╗ ██╗   ██╗██████╗  █████╗
+    ██║     ██╔══██╗██║   ██║██╔══██╗██╔══██╗
+    ██║     ███████║██║   ██║██████╔╝███████║
+    ██║     ██╔══██║██║   ██║██╔══██╗██╔══██║
+    ███████╗██║  ██║╚██████╔╝██║  ██║██║  ██║
+    ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
-(Loop Automated React Architecture)
-___________________________________________
+    (Loop Automated React Architecture)
+    ___________________________________________
 
-Laura is an AI-driven workforce dedicated to automating the process of
-building websites and web applications.
+    Laura is an AI-driven workforce dedicated to automating the process of
+    building websites and web applications.
 
-Remember, Laura loves you <3
-
-Created by Spark Engine
-https://sparkengine.ai
+    Created by Spark Engine
+    URL: https://sparkengine.ai
 
 
-Need help? Use 'laura -h' for our full list of arguments, or begin below.
+    Need help? Use 'laura -h' for our full list of arguments, or begin below.
 
 """
 
@@ -116,7 +113,7 @@ if len(sys.argv) == 1:
     # args.config = input("Which mode would you like to use? -> ") or "Human"
     # args.model = input("Enter the GPT Model: ") or "GPT_3_5_TURBO"
     # args.path = input("Enter your file directory [default path]: ") or ""
-    # args.stack = input("Enter the stack configuration file name [REACT]: ") or "REACT"
+    args.stack = input("Enter the stack configuration file name (default is REACT): ") or "REACT"
 
 # Start ChatDev
 
