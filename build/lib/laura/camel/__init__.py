@@ -11,17 +11,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # =========== Copyright 2023 @ CAMEL-AI.org. All Rights Reserved. ===========
-import laura.camel.agents
-import laura.camel.configs
-import laura.camel.generators
-import laura.camel.messages
-import laura.camel.prompts
-import laura.camel.typing
-import laura.camel.utils
-
-__version__ = '0.1.0'
-
-__all__ = [
-    '__version__',
-    'camel',
-]

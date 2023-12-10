@@ -23,7 +23,7 @@ from laura.camel.agents.chat_agent import ChatAgentResponse
 from laura.camel.messages import ChatMessage, UserChatMessage
 from laura.camel.messages import SystemMessage
 from laura.camel.typing import ModelType, RoleType, TaskType, PhaseType
-from laura.utils import log_arguments, log_and_print_online
+from laura.chatdev.utils import log_arguments, log_and_print_online
 
 
 @log_arguments
