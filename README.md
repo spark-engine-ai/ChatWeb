@@ -20,10 +20,9 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
 2. **Install and Set Up LAuRA:**
    Navigate to the `LAuRA` directory where the setup.py file is and run:
    ```
-   python setup.py install
+   pip install -e .
    ```
-   NOTE: We are currently working out the issues with our Unix/Linux compatibility. Please join our Discord if you'd like to contribute.
-   
+
 3. **Set your OpenAI API Key:** Open a terminal anywhere you would like, but first remember to initialize your OpenAI API key like so:
 
    On Unix/Linux:
