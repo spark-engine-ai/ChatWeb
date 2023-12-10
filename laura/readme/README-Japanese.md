@@ -189,4 +189,4 @@ https://github.com/OpenBMB/ChatDev/assets/11889052/80d01d2f-677b-4399-ad8b-f7af9
 
 ## 📬 お問い合わせ
 
-ご質問、フィードバック、またはお問い合わせがある場合は、[laura.chatdev.openbmb@outlook.com](mailto:laura.chatdev.openbmb@outlook.com) までお気軽にご連絡ください
+ご質問、フィードバック、またはお問い合わせがある場合は、[laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com) までお気軽にご連絡ください

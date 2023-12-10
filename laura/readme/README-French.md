@@ -183,4 +183,4 @@ de ``CompanyConfig/Default``
 
 ## Contact
 
-Si vous avez des questions, des retours ou souhaitez nous contacter, n'hésitez pas à nous envoyer un email à [laura.chatdev.openbmb@outlook.com](mailto:laura.chatdev.openbmb@outlook.com)
+Si vous avez des questions, des retours ou souhaitez nous contacter, n'hésitez pas à nous envoyer un email à [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com)

@@ -206,4 +206,4 @@ Daha ayrıntılı bilgi için [Wiki](wiki.md)'mize başvurabilirsiniz, burada ş
 
 ## 📬 İletişim
 
-Herhangi bir sorunuz, geri bildiriminiz veya iletişime geçmek isterseniz, lütfen bize [laura.chatdev.openbmb@outlook.com](mailto:laura.chatdev.openbmb@outlook.com) adresi üzerinden ulaşmaktan çekinmeyin.
+Herhangi bir sorunuz, geri bildiriminiz veya iletişime geçmek isterseniz, lütfen bize [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com) adresi üzerinden ulaşmaktan çekinmeyin.

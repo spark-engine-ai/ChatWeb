@@ -112,7 +112,7 @@ then go to [Local Demo Website](http://127.0.0.1:8000/) to see an online visuali
     ```commandline
     docker build -t chatdev:latest .
     ```
-  it will generate a 400MB+ docker image named laura.chatdev.
+  it will generate a 400MB+ docker image named laura..
 
 ### Run Docker
 - run following command to create and go into a container

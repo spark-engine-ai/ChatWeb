@@ -3,7 +3,7 @@ import os
 import re
 import subprocess
 
-from laura.chatdev.utils import log_and_print_online
+from laura..utils import log_and_print_online
 
 
 class Codes:

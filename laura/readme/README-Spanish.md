@@ -182,4 +182,4 @@ un paquete de webapplication y generará una carpeta llamada ``/projects/2048_TH
 
 ## 📬 Contacto
 
-Si tienes alguna pregunta, comentarios, o deseas ponerte en contacto, no dudes en enviarnos un correo electrónico a [laura.chatdev.openbmb@outlook.com](mailto:laura.chatdev.openbmb@outlook.com)
+Si tienes alguna pregunta, comentarios, o deseas ponerte en contacto, no dudes en enviarnos un correo electrónico a [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com)

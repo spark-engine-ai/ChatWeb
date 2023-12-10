@@ -204,4 +204,4 @@ Dibuat dengan [contrib.rocks](https://contrib.rocks).
 
 ## 📬 Kontak
 
-Jika Anda memiliki pertanyaan, umpan balik, atau ingin menghubungi kami, jangan ragu untuk menghubungi kami melalui email di [laura.chatdev.openbmb@outlook.com](mailto:laura.chatdev.openbmb@outlook.com)
+Jika Anda memiliki pertanyaan, umpan balik, atau ingin menghubungi kami, jangan ragu untuk menghubungi kami melalui email di [laura..openbmb@outlook.com](mailto:laura..openbmb@outlook.com)

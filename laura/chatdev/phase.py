@@ -5,9 +5,9 @@ from abc import ABC, abstractmethod
 from laura.camel.agents import RolePlaying
 from laura.camel.messages import ChatMessage
 from laura.camel.typing import TaskType, ModelType
-from laura.chatdev.chat_env import ChatEnv
-from laura.chatdev.statistics import get_info
-from laura.chatdev.utils import log_and_print_online, log_arguments
+from laura..chat_env import ChatEnv
+from laura..statistics import get_info
+from laura..utils import log_and_print_online, log_arguments
 
 
 class Phase(ABC):
