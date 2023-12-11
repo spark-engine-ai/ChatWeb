@@ -1,6 +1,6 @@
 # LAuRA: Loop Automated React Architecture
 
-![Menu Showcase](/readme/laura-1.png)
+![Menu Showcase](/readme/laura.png)
 
 LAuRA (Loop Automated React Architecture) is an innovative tool designed to automate the process of web application development. Originally derived from [ChatDev](https://github.com/OpenBMB/ChatDev), it simplifies building complex web apps by leveraging AI-driven technologies.
 
