@@ -15,6 +15,8 @@ import argparse
 import logging
 import os
 import sys
+import json
+from pathlib import Path
 
 from laura.camel.typing import ModelType
 
@@ -114,6 +116,18 @@ if len(sys.argv) == 1:
     # args.model = input("Enter the GPT Model: ") or "GPT_3_5_TURBO"
     # args.path = input("Enter your file directory [default path]: ") or ""
     args.stack = input("Enter the stack configuration file name (default is REACT): ") or "REACT"
+
+# New code to read JSON configuration file and update task argument
+home_directory = Path.home()
+stack_config_file = home_directory / "laura" / "frameworks" / f"{args.stack}.json"
+if stack_config_file.exists():
+    with open(stack_config_file, 'r') as file:
+        stack_config = json.load(file)
+    ui_kit = stack_config.get("ui_kit", "Tailwind UI Kit classes")
+    framework = stack_config.get("framework", "React JS")
+    args.task += f". Keep in mind we are using {ui_kit} with {framework}."
+else:
+    print(f"Warning: Stack configuration file {args.stack}.json not found in {stack_config_file}. Proceeding with default values.")
 
 # Start ChatDev
 

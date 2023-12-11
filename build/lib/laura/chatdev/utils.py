@@ -64,7 +64,8 @@ def log_and_print_online(role, content=None):
         send_msg("Laura", role)
         print(role + "\n")
     else:
-        print("Finished talking with " + str(role) + "\n")
+        if role != "Laura":
+            print("Finished talking with " + str(role) + "\n")
         logging.info(str(role) + "\n")
         if isinstance(content, SystemMessage):
             records_kv = []
