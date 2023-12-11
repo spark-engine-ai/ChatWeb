@@ -32,7 +32,7 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
    On Windows:
 
    ```
-   python setup.py install
+   python setup.py install --user
    ```
 
 3. **Set your OpenAI API Key:** Open a terminal anywhere you would like, but first remember to initialize your OpenAI API key like so:
