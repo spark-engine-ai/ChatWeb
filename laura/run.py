@@ -105,12 +105,12 @@ print(laura_ascii_art)
 
 # Check if no arguments were provided
 if len(sys.argv) == 1:
-    args.name = input("Name your project -> ").strip()
+    args.name = input("Name your project => ").strip()
     while not args.name:
-        args.name = input("Name of the web application cannot be blank, please enter again -> ").strip()
-    args.task = input("What would you like to build? -> ").strip()
+        args.name = input("Name of the web application cannot be blank, please enter again => ").strip()
+    args.task = input("\nWhat would you like to build? => ").strip()
     while not args.task:
-        args.task = input("Prompt of the web application cannot be blank, please enter again -> ").strip()
+        args.task = input("Prompt of the web application cannot be blank, please enter again => ").strip()
     # Additional prompts can be uncommented and used as needed
     # args.config = input("Which mode would you like to use? -> ") or "Human"
     # args.model = input("Enter the GPT Model: ") or "GPT_3_5_TURBO"
@@ -122,12 +122,14 @@ if len(sys.argv) == 1:
     for config_file in frameworks_dir.glob("*.json"):
         with open(config_file, 'r') as file:
             config = json.load(file)
-        print(f">>> {config_file.stem} <<<")
+        print(f"<<< {config_file.stem} >>>")
         print(f"Framework: {config.get('framework', 'Unknown Framework')}")
         print(f"UI Kit: {config.get('ui_kit', 'Unknown UI Kit')}\n")
 
-    args.stack = input("Enter your preferred stack configuration (default is REACT): ") or "REACT"
+    args.stack = input("\nEnter your preferred stack configuration (default is REACT) => ") or "REACT"
 
+if "OPENAI_API_KEY" not in os.environ:
+    sys.exit("\nOops!\nYour OPENAI_API_KEY is not set. Please set it in your environment variables.\n")
 # New code to read JSON configuration file and update task argument
 home_directory = Path.home()
 stack_config_file = home_directory / "laura" / "frameworks" / f"{args.stack}.json"
