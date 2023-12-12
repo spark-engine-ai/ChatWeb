@@ -115,7 +115,18 @@ if len(sys.argv) == 1:
     # args.config = input("Which mode would you like to use? -> ") or "Human"
     # args.model = input("Enter the GPT Model: ") or "GPT_3_5_TURBO"
     # args.path = input("Enter your file directory [default path]: ") or ""
-    args.stack = input("Enter the stack configuration file name (default is REACT): ") or "REACT"
+    # Code to list configurations
+    home_directory = Path.home()
+    frameworks_dir = home_directory / "laura" / "frameworks"
+    print("\nConfigurations:\n")
+    for config_file in frameworks_dir.glob("*.json"):
+        with open(config_file, 'r') as file:
+            config = json.load(file)
+        print(f">>> {config_file.stem} <<<")
+        print(f"Framework: {config.get('framework', 'Unknown Framework')}")
+        print(f"UI Kit: {config.get('ui_kit', 'Unknown UI Kit')}\n")
+
+    args.stack = input("Enter your preferred stack configuration (default is REACT): ") or "REACT"
 
 # New code to read JSON configuration file and update task argument
 home_directory = Path.home()
