@@ -44,15 +44,20 @@ Join our Discord [here](https://discord.gg/fBuFBPvN6W) to join us!
    On Unix/Linux:
 
    ```
-   export OPENAI_API_KEY="your_OpenAI_API_key"
+   export OPENAI_API_KEY="your_API_key"
    ```
 
-   On Windows:
+   On Windows (Powershell):
 
    ```
-   $env:OPENAI_API_KEY="your_OpenAI_API_key"
+   $env:OPENAI_API_KEY="your_API_key"
    ```
 
+   On Windows (Command Prompt):
+
+   ```
+   set OPENAI_API_KEY="your_API_key"
+   ```
    Every time you open a new terminal to use LAuRA, you must initialize the API key. (we are working to make this easier btw)
 
 4. **Run LAuRA:**
