@@ -1,0 +1,7 @@
+{
+  "template_path": "react_ts_chakra",
+  "components_path": "/src/components",
+  "framework":"React JS",
+  "ui_kit":"Chakra UI kit",
+  "typescript": true
+}

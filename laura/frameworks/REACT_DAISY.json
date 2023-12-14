@@ -1,0 +1,7 @@
+{
+  "template_path": "react_ts_daisy",
+  "components_path": "/src/components",
+  "framework":"React JS",
+  "ui_kit":"Daisy UI classNames and Tailwind UI classNames",
+  "typescript": true
+}
