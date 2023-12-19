@@ -1,0 +1,7 @@
+{
+  "template_path": "react_ts_bulma",
+  "components_path": "/src/components",
+  "framework":"React JS",
+  "ui_kit":"Material UI kit",
+  "typescript": true
+}

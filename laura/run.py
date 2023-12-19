@@ -93,7 +93,7 @@ laura_ascii_art = """
     building websites and web applications.
 
     Created by Spark Engine
-    URL: https://sparkengine.ai
+    URL: https://laura.sparkengine.ai
 
 
     Need help? Use 'laura -h' for our full list of arguments, or begin below.
