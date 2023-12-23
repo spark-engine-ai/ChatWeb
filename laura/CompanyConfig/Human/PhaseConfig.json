@@ -41,7 +41,7 @@
             "```",
             "Start with the \"main\" file, importing other files you create. The \"main\" file links all main components.",
             "The code must be functional, without comments. Use the specified UI kit and framework for detailed, responsive design with lorem ipsum content unless specified.",
-            "Implement all functions, using design elements like border radius, box shadows, borders, basic SVGs and gradients for attractive UI.",
+            "Implement all functions, using elements like border radius, box shadows, borders, SVGs and gradients for attractive UI.",
             "Remember, imported component file names must be lowercase."
         ]
     },
